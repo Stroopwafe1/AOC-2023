@@ -1,0 +1,109 @@
+ui8[22050] s_buffer;
+
+ui8 Part1(ui64 size) {
+	ui64 sum = 0;
+	ui8[2] numBuffer = {0, 0};
+	ui8 buffLength = 0;
+	loop i, 0..size {
+		ui8 byte = s_buffer[i];
+		if byte == 10 {
+			ui8 tempSum = (numBuffer[0] * 10) + numBuffer[1];
+			sum += tempSum;
+			buffLength = 0;
+			numBuffer = {0, 0};
+		} else if (byte >= 48) & (byte <= 57) {
+			numBuffer[buffLength] = (byte - 48);
+			buffLength = 1;
+			numBuffer[buffLength] = (byte - 48);
+		}
+	}
+	stdout.write("Calibration sum part 1: ");
+	stdout.writeln(sum);
+	return 0;
+}
+
+ui8 Part2(ui64 size) {
+	// 'o' => 1 jump 2
+	// 'e' => 8 jump 4
+	// 'n' => 9 jump 3
+	// 't' => 2/3, look next
+	// 'f' => 4/5, look next
+	// 's' => 6/7, look next
+
+	ui64 sum = 0;
+	ui8[2] numBuffer = {0, 0};
+	ui8 buffLength = 0;
+	loop i, 0..size {
+		ui8 byte = s_buffer[i];
+		if byte == 10 {
+			ui8 tempSum = (numBuffer[0] * 10) + numBuffer[1];
+			stdout.write(sum);
+			stdout.write(" + ");
+			stdout.write(tempSum);
+			stdout.write(" = ");
+			sum += tempSum;
+			stdout.writeln(sum);
+			buffLength = 0;
+			numBuffer = {0, 0};
+		} else if (byte >= 48) & (byte <= 57) {
+			numBuffer[buffLength] = (byte - 48);
+			buffLength = 1;
+			numBuffer[buffLength] = (byte - 48);
+		} else if ((byte == 111) & (s_buffer[i + 1] == 110)) & (s_buffer[i + 2] == 101) {
+			numBuffer[buffLength] = 1;
+			buffLength = 1;
+			numBuffer[buffLength] = 1;
+		} else if (((byte == 101) & (s_buffer[i + 1] == 105)) & ((s_buffer[i + 2] == 103) & (s_buffer[i + 3] == 104))) & (s_buffer[i + 4] == 116) {
+			numBuffer[buffLength] = 8;
+			buffLength = 1;
+			numBuffer[buffLength] = 8;
+		} else if ((byte == 110) & (s_buffer[i + 1] == 105)) & ((s_buffer[i + 2] == 110) & (s_buffer[i + 3] == 101)) {
+			numBuffer[buffLength] = 9;
+			buffLength = 1;
+			numBuffer[buffLength] = 9;
+		} else if (((byte == 116) & (s_buffer[i + 1] == 104)) & ((s_buffer[i + 2] == 114) & (s_buffer[i + 3] == 101))) & (s_buffer[i + 4] == 101) {
+			numBuffer[buffLength] = 3;
+			buffLength = 1;
+			numBuffer[buffLength] = 3;
+		} else if ((byte == 116) & (s_buffer[i + 1] == 119)) & (s_buffer[i + 2] == 111) {
+			numBuffer[buffLength] = 2;
+			buffLength = 1;
+			numBuffer[buffLength] = 2;
+		} else if ((byte == 102) & (s_buffer[i + 1] == 111)) & ((s_buffer[i + 2] == 117) & (s_buffer[i + 3] == 114)) {
+			numBuffer[buffLength] = 4;
+			buffLength = 1;
+			numBuffer[buffLength] = 4;
+		} else if ((byte == 102) & (s_buffer[i + 1] == 105)) & ((s_buffer[i + 2] == 118) & (s_buffer[i + 3] == 101)) {
+			numBuffer[buffLength] = 5;
+			buffLength = 1;
+			numBuffer[buffLength] = 5;
+		} else if ((byte == 115) & (s_buffer[i + 1] == 105)) & (s_buffer[i + 2] == 120) {
+			numBuffer[buffLength] = 6;
+			buffLength = 1;
+			numBuffer[buffLength] = 6;
+		} else if (((byte == 115) & (s_buffer[i + 1] == 101)) & ((s_buffer[i + 2] == 118) & (s_buffer[i + 3] == 101))) & (s_buffer[i + 4] == 110) {
+			numBuffer[buffLength] = 7;
+			buffLength = 1;
+			numBuffer[buffLength] = 7;
+		}
+	}
+	stdout.write("Calibration sum part 2: ");
+	stdout.writeln(sum);
+	return 0;
+}
+
+ui8 main(cstring[] argv) {
+	i32 fd = SYS_OPEN(argv[1], 0, 0);
+	if (fd < 0) {
+		stdout.writeln("Could not open file");
+		return -1;
+	}
+	ui64 size = SYS_READ(fd, s_buffer, 22039);
+	if (size == 0) {
+		stdout.writeln("Could not read from file");
+		return -1;
+	}
+	Part1(size);
+	Part2(size);
+	return 0;
+}
