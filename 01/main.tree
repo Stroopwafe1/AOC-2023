@@ -55,6 +55,7 @@ ui8 Part2(ui64 size) {
 	loop i, 0..size {
 		ui8 byte = s_buffer[i];
 		ref<ui8> nextBytes = GetNextNBytes(i, 5);
+		ui8 num = 0;
 		if byte == 10 {
 			ui8 tempSum = (numBuffer[0] * 10) + numBuffer[1];
 			stdout.write(sum);
@@ -66,45 +67,30 @@ ui8 Part2(ui64 size) {
 			buffLength = 0;
 			numBuffer = {0, 0};
 		} else if (byte >= 48) & (byte <= 57) {
-			numBuffer[buffLength] = (byte - 48);
-			buffLength = 1;
-			numBuffer[buffLength] = (byte - 48);
+			num = byte - 48;
 		} else if StrEquals(nextBytes, "one", 3) {
-			numBuffer[buffLength] = 1;
-			buffLength = 1;
-			numBuffer[buffLength] = 1;
+			num = 1;
 		} else if StrEquals(nextBytes, "eight", 5) {
-			numBuffer[buffLength] = 8;
-			buffLength = 1;
-			numBuffer[buffLength] = 8;
+			num = 8;
 		} else if StrEquals(nextBytes, "nine", 4) {
-			numBuffer[buffLength] = 9;
-			buffLength = 1;
-			numBuffer[buffLength] = 9;
+			num = 9;
 		} else if StrEquals(nextBytes, "three", 5) {
-			numBuffer[buffLength] = 3;
-			buffLength = 1;
-			numBuffer[buffLength] = 3;
+			num = 3;
 		} else if StrEquals(nextBytes, "two", 3) {
-			numBuffer[buffLength] = 2;
-			buffLength = 1;
-			numBuffer[buffLength] = 2;
+			num = 2;
 		} else if StrEquals(nextBytes, "four", 4) {
-			numBuffer[buffLength] = 4;
-			buffLength = 1;
-			numBuffer[buffLength] = 4;
+			num = 4;
 		} else if StrEquals(nextBytes, "five", 4) {
-			numBuffer[buffLength] = 5;
-			buffLength = 1;
-			numBuffer[buffLength] = 5;
+			num = 5;
 		} else if StrEquals(nextBytes, "six", 3) {
-			numBuffer[buffLength] = 6;
-			buffLength = 1;
-			numBuffer[buffLength] = 6;
+			num = 6;
 		} else if StrEquals(nextBytes, "seven", 5) {
-			numBuffer[buffLength] = 7;
+			num = 7;
+		}
+		if num != 0 {
+			numBuffer[buffLength] = num;
 			buffLength = 1;
-			numBuffer[buffLength] = 7;
+			numBuffer[buffLength] = num;
 		}
 		dealloc(nextBytes, 5);
 	}

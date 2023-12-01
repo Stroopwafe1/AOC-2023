@@ -401,7 +401,7 @@ Part2:
 	jl .inside_label4
 	jmp .not_label4
 .inside_label4:
-	sub rsp, 9
+	sub rsp, 10
 	mov rax, qword [rbp-24]; printExpression variable i
 	movzx r12, byte [s_buffer+rax*1]; printExpression array s_buffer
 	mov rax, r12
@@ -426,6 +426,8 @@ Part2:
 	pop rsi
 	pop rdi
 	mov qword [rbp-33], rax; VAR_DECL_ASSIGN else variable nextBytes
+	mov rax, 0
+	mov byte [rbp-34], al; VAR_DECL_ASSIGN else variable num
 	movzx rax, byte [rbp-25]; printExpression, left identifier, rbp variable byte
 	mov rbx, 10; printExpression, right int
 	mov rcx, 0
@@ -451,7 +453,7 @@ Part2:
 	mov rbx, r12; printExpression, nodeType=1, array index
 	pop rax; printExpression, leftPrinted, recover left
 	add rax, rbx
-	mov byte [rbp-34], al; VAR_DECL_ASSIGN else variable tempSum
+	mov byte [rbp-35], al; VAR_DECL_ASSIGN else variable tempSum
 	push rdi
 	push rsi
 	push rdx
@@ -499,7 +501,7 @@ Part2:
 	push r9
 	push r10
 ; =============== FUNC CALL + VARIABLE ===============
-	movzx rdi, byte [rbp-34]; variable tempSum
+	movzx rdi, byte [rbp-35]; variable tempSum
 	call print_ui64
 ; =============== END FUNC CALL + VARIABLE ===============
 	pop r10
@@ -531,7 +533,7 @@ Part2:
 	pop rsi
 	pop rdi
 	mov rax, qword [rbp-12]; printExpression, left identifier, rbp variable sum
-	movzx rbx, byte [rbp-34]; printExpression, right identifier, rbp variable tempSum
+	movzx rbx, byte [rbp-35]; printExpression, right identifier, rbp variable tempSum
 	add rax, rbx
 	mov qword [rbp-12], rax; VAR_ASSIGNMENT else variable sum
 	push rdi
@@ -583,22 +585,10 @@ Part2:
 	jnz .if5
 	jmp .else_if5
 .if5:
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
 	movzx rax, byte [rbp-25]; printExpression, left identifier, rbp variable byte
 	mov rbx, 48; printExpression, right int
 	sub ax, bx
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
-	mov rax, 1
-	mov byte [rbp-16], al; VAR_ASSIGNMENT else variable buffLength
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
-	movzx rax, byte [rbp-25]; printExpression, left identifier, rbp variable byte
-	mov rbx, 48; printExpression, right int
-	sub ax, bx
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-34], al; VAR_ASSIGNMENT else variable num
 	jmp .end_if5
 .else_if5:
 	push rdi
@@ -625,18 +615,8 @@ Part2:
 	jnz .if6
 	jmp .else_if6
 .if6:
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
 	mov rax, 1
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
-	mov rax, 1
-	mov byte [rbp-16], al; VAR_ASSIGNMENT else variable buffLength
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
-	mov rax, 1
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-34], al; VAR_ASSIGNMENT else variable num
 	jmp .end_if6
 .else_if6:
 	push rdi
@@ -663,18 +643,8 @@ Part2:
 	jnz .if7
 	jmp .else_if7
 .if7:
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
 	mov rax, 8
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
-	mov rax, 1
-	mov byte [rbp-16], al; VAR_ASSIGNMENT else variable buffLength
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
-	mov rax, 8
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-34], al; VAR_ASSIGNMENT else variable num
 	jmp .end_if7
 .else_if7:
 	push rdi
@@ -701,18 +671,8 @@ Part2:
 	jnz .if8
 	jmp .else_if8
 .if8:
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
 	mov rax, 9
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
-	mov rax, 1
-	mov byte [rbp-16], al; VAR_ASSIGNMENT else variable buffLength
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
-	mov rax, 9
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-34], al; VAR_ASSIGNMENT else variable num
 	jmp .end_if8
 .else_if8:
 	push rdi
@@ -739,18 +699,8 @@ Part2:
 	jnz .if9
 	jmp .else_if9
 .if9:
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
 	mov rax, 3
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
-	mov rax, 1
-	mov byte [rbp-16], al; VAR_ASSIGNMENT else variable buffLength
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
-	mov rax, 3
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-34], al; VAR_ASSIGNMENT else variable num
 	jmp .end_if9
 .else_if9:
 	push rdi
@@ -777,18 +727,8 @@ Part2:
 	jnz .if10
 	jmp .else_if10
 .if10:
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
 	mov rax, 2
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
-	mov rax, 1
-	mov byte [rbp-16], al; VAR_ASSIGNMENT else variable buffLength
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
-	mov rax, 2
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-34], al; VAR_ASSIGNMENT else variable num
 	jmp .end_if10
 .else_if10:
 	push rdi
@@ -815,18 +755,8 @@ Part2:
 	jnz .if11
 	jmp .else_if11
 .if11:
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
 	mov rax, 4
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
-	mov rax, 1
-	mov byte [rbp-16], al; VAR_ASSIGNMENT else variable buffLength
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
-	mov rax, 4
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-34], al; VAR_ASSIGNMENT else variable num
 	jmp .end_if11
 .else_if11:
 	push rdi
@@ -853,18 +783,8 @@ Part2:
 	jnz .if12
 	jmp .else_if12
 .if12:
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
 	mov rax, 5
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
-	mov rax, 1
-	mov byte [rbp-16], al; VAR_ASSIGNMENT else variable buffLength
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
-	mov rax, 5
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-34], al; VAR_ASSIGNMENT else variable num
 	jmp .end_if12
 .else_if12:
 	push rdi
@@ -891,18 +811,8 @@ Part2:
 	jnz .if13
 	jmp .else_if13
 .if13:
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
 	mov rax, 6
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
-	mov rax, 1
-	mov byte [rbp-16], al; VAR_ASSIGNMENT else variable buffLength
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
-	mov rax, 6
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-34], al; VAR_ASSIGNMENT else variable num
 	jmp .end_if13
 .else_if13:
 	push rdi
@@ -929,18 +839,8 @@ Part2:
 	jnz .if14
 	jmp .end_if14
 .if14:
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
 	mov rax, 7
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
-	mov rax, 1
-	mov byte [rbp-16], al; VAR_ASSIGNMENT else variable buffLength
-	movzx rax, byte [rbp-16]; printExpression variable buffLength
-	push rax
-	mov rax, 7
-	pop r11
-	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-34], al; VAR_ASSIGNMENT else variable num
 	jmp .end_if14
 .end_if14:
 .end_if13:
@@ -953,6 +853,31 @@ Part2:
 .end_if6:
 .end_if5:
 .end_if4:
+	movzx rax, byte [rbp-34]; printExpression, left identifier, rbp variable num
+	mov rbx, 0; printExpression, right int
+	mov rcx, 0
+	mov rdx, 1
+	cmp al, bl
+	cmovne rcx, rdx
+	mov rax, rcx; printConditionalMove
+	test rax, rax
+	jnz .if15
+	jmp .end_if15
+.if15:
+	movzx rax, byte [rbp-16]; printExpression variable buffLength
+	push rax
+	movzx rax, byte [rbp-34]; printExpression variable num
+	pop r11
+	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov rax, 1
+	mov byte [rbp-16], al; VAR_ASSIGNMENT else variable buffLength
+	movzx rax, byte [rbp-16]; printExpression variable buffLength
+	push rax
+	movzx rax, byte [rbp-34]; printExpression variable num
+	pop r11
+	mov byte [rbp-15+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	jmp .end_if15
+.end_if15:
 	push rdi
 	push rsi
 	push rdx
@@ -973,7 +898,7 @@ Part2:
 	pop rdx
 	pop rsi
 	pop rdi
-	add rsp, 9
+	add rsp, 10
 .skip_label4:
 	mov rax, qword [rbp-24]; LOOP i
 	inc rax
@@ -1069,9 +994,9 @@ _start:
 	cmovl rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
-	jnz .if15
-	jmp .end_if15
-.if15:
+	jnz .if16
+	jmp .end_if16
+.if16:
 	push rdi
 	push rsi
 	push rdx
@@ -1096,8 +1021,8 @@ _start:
 	mov rax, -1
 	add rsp, 12
 	jmp .exit
-	jmp .end_if15
-.end_if15:
+	jmp .end_if16
+.end_if16:
 	push rdi
 	push rsi
 	push rdx
@@ -1129,9 +1054,9 @@ _start:
 	cmove rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
-	jnz .if16
-	jmp .end_if16
-.if16:
+	jnz .if17
+	jmp .end_if17
+.if17:
 	push rdi
 	push rsi
 	push rdx
@@ -1156,8 +1081,8 @@ _start:
 	mov rax, -1
 	add rsp, 12
 	jmp .exit
-	jmp .end_if16
-.end_if16:
+	jmp .end_if17
+.end_if17:
 	mov rax, qword [rbp-12]; printExpression variable size
 	mov rdi, rax
 	call Part1
