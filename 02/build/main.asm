@@ -76,54 +76,52 @@ Part1:
 	push rbp
 	mov rbp, rsp
 ; =============== END PROLOGUE ===============
-	sub rsp, 43
+	sub rsp, 42
 	mov rax, 0
-	mov qword [rbp-12], rax; VAR_DECL_ASSIGN else variable sum
+	mov qword [rbp-8], rax; VAR_DECL_ASSIGN else variable sum
 	mov rax, 0
-	mov byte [rbp-16], al; VAR_DECL_ASSIGN ARRAY variable numBuffer[0]
+	mov byte [rbp-12], al; VAR_DECL_ASSIGN ARRAY variable numBuffer[0]
 	mov rax, 0
-	mov byte [rbp-15], al; VAR_DECL_ASSIGN ARRAY variable numBuffer[1]
+	mov byte [rbp-11], al; VAR_DECL_ASSIGN ARRAY variable numBuffer[1]
 	mov rax, 0
-	mov byte [rbp-14], al; VAR_DECL_ASSIGN ARRAY variable numBuffer[2]
+	mov byte [rbp-10], al; VAR_DECL_ASSIGN ARRAY variable numBuffer[2]
 	mov rax, 0
-	mov byte [rbp-17], al; VAR_DECL_ASSIGN else variable buffLength
+	mov byte [rbp-13], al; VAR_DECL_ASSIGN else variable buffLength
 	mov rax, 0
-	mov byte [rbp-18], al; VAR_DECL_ASSIGN else variable currentGame
+	mov byte [rbp-14], al; VAR_DECL_ASSIGN else variable currentGame
 	mov rax, 0
-	mov dword [rbp-31], eax; VAR_DECL_ASSIGN STRUCT Set currentSet.red
+	mov dword [rbp-27], eax; VAR_DECL_ASSIGN STRUCT Set currentSet.red
 	mov rax, 0
-	mov dword [rbp-27], eax; VAR_DECL_ASSIGN STRUCT Set currentSet.green
+	mov dword [rbp-23], eax; VAR_DECL_ASSIGN STRUCT Set currentSet.green
 	mov rax, 0
-	mov dword [rbp-23], eax; VAR_DECL_ASSIGN STRUCT Set currentSet.blue
-	mov rax, 0
-	mov byte [rbp-32], al; VAR_DECL_ASSIGN else variable setCount
+	mov dword [rbp-19], eax; VAR_DECL_ASSIGN STRUCT Set currentSet.blue
 	mov rax, 1
-	mov byte [rbp-33], al; VAR_DECL_ASSIGN else variable possible
+	mov dword [rbp-31], eax; VAR_DECL_ASSIGN else variable possible
 	mov rax, 0
-	mov qword [rbp-41], rax; LOOP i
+	mov qword [rbp-39], rax; LOOP i
 .label1:
 	mov rax, qword rdi; printExpression variable size
-	cmp qword [rbp-41], rax; LOOP i
+	cmp qword [rbp-39], rax; LOOP i
 	jl .inside_label1
 	jmp .not_label1
 .inside_label1:
 	sub rsp, 7
-	mov rax, qword [rbp-41]; printExpression variable i
+	mov rax, qword [rbp-39]; printExpression variable i
 	movzx r12, byte [s_buffer+rax*1]; printExpression array s_buffer
 	mov rax, r12
-	mov byte [rbp-42], al; VAR_DECL_ASSIGN else variable byte
-	movzx rax, byte [rbp-42]; printExpression, left identifier, rbp variable byte
-	mov rbx, 10; printExpression, right int
+	mov byte [rbp-40], al; VAR_DECL_ASSIGN else variable byte
+	movzx rax, byte [rbp-40]; printExpression, left identifier, rbp variable byte
+	mov rbx, 10; printExpression, right char '\n'
 	mov rcx, 0
 	mov rdx, 1
-	cmp al, bl
+	cmp ax, bx
 	cmove rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
 	jnz .if1
 	jmp .else_if1
 .if1:
-	mov eax, dword [rbp-31]; printExpression struct Set.red
+	mov eax, dword [rbp-27]; printExpression struct Set.red
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 12; printExpression, right int
 	pop rax; printExpression, leftPrinted, recover left
@@ -133,7 +131,7 @@ Part1:
 	cmovg rcx, rdx
 	mov rax, rcx; printConditionalMove
 	push rax; printExpression, leftPrinted, save left
-	mov eax, dword [rbp-27]; printExpression struct Set.green
+	mov eax, dword [rbp-23]; printExpression struct Set.green
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 13; printExpression, right int
 	pop rax; printExpression, leftPrinted, recover left
@@ -146,7 +144,7 @@ Part1:
 	pop rax; printExpression, leftPrinted, recover left
 	or eax, ebx
 	push rax; printExpression, leftPrinted, save left
-	mov eax, dword [rbp-23]; printExpression struct Set.blue
+	mov eax, dword [rbp-19]; printExpression struct Set.blue
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 14; printExpression, right int
 	pop rax; printExpression, leftPrinted, recover left
@@ -163,66 +161,64 @@ Part1:
 	jmp .end_if2
 .if2:
 	mov rax, 0
-	mov byte [rbp-33], al; VAR_ASSIGNMENT else variable possible
+	mov dword [rbp-31], eax; VAR_ASSIGNMENT else variable possible
 	jmp .end_if2
 .end_if2:
-	movzx rax, byte [rbp-33]; printExpression variable possible
+	mov eax, dword [rbp-31]; printExpression variable possible
 	test rax, rax
 	jnz .if3
 	jmp .end_if3
 .if3:
-	mov rax, qword [rbp-12]; printExpression, left identifier, rbp variable sum
-	movzx rbx, byte [rbp-18]; printExpression, right identifier, rbp variable currentGame
+	mov rax, qword [rbp-8]; printExpression, left identifier, rbp variable sum
+	movzx rbx, byte [rbp-14]; printExpression, right identifier, rbp variable currentGame
 	add rax, rbx
-	mov qword [rbp-12], rax; VAR_ASSIGNMENT else variable sum
+	mov qword [rbp-8], rax; VAR_ASSIGNMENT else variable sum
 	jmp .end_if3
 .end_if3:
 	mov rax, 0
-	mov byte [rbp-18], al; VAR_ASSIGNMENT else variable currentGame
+	mov byte [rbp-14], al; VAR_ASSIGNMENT else variable currentGame
 	mov rax, 0
-	mov byte [rbp-32], al; VAR_ASSIGNMENT else variable setCount
+	mov dword [rbp-27], eax; VAR_ASSIGNMENT STRUCT Set.red
 	mov rax, 0
-	mov dword [rbp-31], eax; VAR_ASSIGNMENT STRUCT Set.red
+	mov dword [rbp-23], eax; VAR_ASSIGNMENT STRUCT Set.green
 	mov rax, 0
-	mov dword [rbp-27], eax; VAR_ASSIGNMENT STRUCT Set.green
-	mov rax, 0
-	mov dword [rbp-23], eax; VAR_ASSIGNMENT STRUCT Set.blue
+	mov dword [rbp-19], eax; VAR_ASSIGNMENT STRUCT Set.blue
 	mov rax, 1
-	mov byte [rbp-33], al; VAR_ASSIGNMENT else variable possible
-	mov rax, qword [rbp-41]; printExpression, left identifier, rbp variable i
+	mov dword [rbp-31], eax; VAR_ASSIGNMENT else variable possible
+	mov rax, qword [rbp-39]; printExpression, left identifier, rbp variable i
 	mov rbx, 4; printExpression, right int
 	add rax, rbx
-	mov qword [rbp-41], rax; VAR_ASSIGNMENT else variable i
+	mov qword [rbp-39], rax; VAR_ASSIGNMENT else variable i
 	jmp .end_if1
 .else_if1:
-	movzx rax, byte [rbp-42]; printExpression, left identifier, rbp variable byte
-	mov rbx, 48; printExpression, right int
+	movzx rax, byte [rbp-40]; printExpression, left identifier, rbp variable byte
+	mov rbx, 48; printExpression, right char '0'
 	mov rcx, 0
 	mov rdx, 1
-	cmp al, bl
+	cmp ax, bx
 	cmovge rcx, rdx
 	mov rax, rcx; printConditionalMove
 	push rax; printExpression, leftPrinted, save left
-	movzx rax, byte [rbp-42]; printExpression, left identifier, rbp variable byte
-	mov rbx, 57; printExpression, right int
+	movzx rax, byte [rbp-40]; printExpression, left identifier, rbp variable byte
+	mov rbx, 57; printExpression, right char '9'
 	mov rcx, 0
 	mov rdx, 1
-	cmp al, bl
+	cmp ax, bx
 	cmovle rcx, rdx
 	mov rax, rcx; printConditionalMove
 	mov rbx, rax; printExpression, nodeType=1
 	pop rax; printExpression, leftPrinted, recover left
-	and al, bl
+	and ax, bx
 	test rax, rax
 	jnz .if4
 	jmp .else_if4
 .if4:
 	sub rsp, 1
-	movzx rax, byte [rbp-42]; printExpression, left identifier, rbp variable byte
-	mov rbx, 48; printExpression, right int
-	sub ax, bx
-	mov byte [rbp-43], al; VAR_DECL_ASSIGN else variable number
-	movzx rax, byte [rbp-17]; printExpression, left identifier, rbp variable buffLength
+	movzx rax, byte [rbp-40]; printExpression, left identifier, rbp variable byte
+	mov rbx, 48; printExpression, right char '0'
+	sub eax, ebx
+	mov byte [rbp-41], al; VAR_DECL_ASSIGN else variable number
+	movzx rax, byte [rbp-13]; printExpression, left identifier, rbp variable buffLength
 	mov rbx, 0; printExpression, right int
 	mov rcx, 0
 	mov rdx, 1
@@ -235,12 +231,12 @@ Part1:
 .if5:
 	mov rax, 2
 	push rax
-	movzx rax, byte [rbp-43]; printExpression variable number
+	movzx rax, byte [rbp-41]; printExpression variable number
 	pop r11
-	mov byte [rbp-16+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-12+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
 	jmp .end_if5
 .else_if5:
-	movzx rax, byte [rbp-17]; printExpression, left identifier, rbp variable buffLength
+	movzx rax, byte [rbp-13]; printExpression, left identifier, rbp variable buffLength
 	mov rbx, 1; printExpression, right int
 	mov rcx, 0
 	mov rdx, 1
@@ -254,63 +250,63 @@ Part1:
 	mov rax, 1
 	push rax
 	mov rax, 2
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	pop r11
-	mov byte [rbp-16+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-12+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
 	mov rax, 2
 	push rax
-	movzx rax, byte [rbp-43]; printExpression variable number
+	movzx rax, byte [rbp-41]; printExpression variable number
 	pop r11
-	mov byte [rbp-16+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-12+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
 	jmp .end_if6
 .else_if6:
 	mov rax, 0
 	push rax
 	mov rax, 1
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	pop r11
-	mov byte [rbp-16+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-12+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
 	mov rax, 1
 	push rax
 	mov rax, 2
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	pop r11
-	mov byte [rbp-16+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-12+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
 	mov rax, 2
 	push rax
-	movzx rax, byte [rbp-43]; printExpression variable number
+	movzx rax, byte [rbp-41]; printExpression variable number
 	pop r11
-	mov byte [rbp-16+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-12+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
 .end_if6:
 .end_if5:
-	movzx rax, byte [rbp-17]; printExpression, left identifier, rbp variable buffLength
+	movzx rax, byte [rbp-13]; printExpression, left identifier, rbp variable buffLength
 	mov rbx, 1; printExpression, right int
 	add al, bl
-	mov byte [rbp-17], al; VAR_ASSIGNMENT else variable buffLength
+	mov byte [rbp-13], al; VAR_ASSIGNMENT else variable buffLength
 	add rsp, 1
 	jmp .end_if4
 .else_if4:
-	movzx rax, byte [rbp-42]; printExpression, left identifier, rbp variable byte
-	mov rbx, 32; printExpression, right int
+	movzx rax, byte [rbp-40]; printExpression, left identifier, rbp variable byte
+	mov rbx, 32; printExpression, right char ' '
 	mov rcx, 0
 	mov rdx, 1
-	cmp al, bl
+	cmp ax, bx
 	cmove rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
 	jnz .if7
 	jmp .else_if7
 .if7:
-	mov rax, qword [rbp-41]; printExpression, left identifier, rbp variable i
+	mov rax, qword [rbp-39]; printExpression, left identifier, rbp variable i
 	mov rbx, 1; printExpression, right int
 	add rax, rbx
 	movzx r12, byte [s_buffer+rax*1]; printExpression array s_buffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
-	mov rbx, 48; printExpression, right int
+	mov rbx, 48; printExpression, right char '0'
 	pop rax; printExpression, leftPrinted, recover left
 	mov rcx, 0
 	mov rdx, 1
@@ -318,13 +314,13 @@ Part1:
 	cmovge rcx, rdx
 	mov rax, rcx; printConditionalMove
 	push rax; printExpression, leftPrinted, save left
-	mov rax, qword [rbp-41]; printExpression, left identifier, rbp variable i
+	mov rax, qword [rbp-39]; printExpression, left identifier, rbp variable i
 	mov rbx, 1; printExpression, right int
 	add rax, rbx
 	movzx r12, byte [s_buffer+rax*1]; printExpression array s_buffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
-	mov rbx, 57; printExpression, right int
+	mov rbx, 57; printExpression, right char '9'
 	pop rax; printExpression, leftPrinted, recover left
 	mov rcx, 0
 	mov rdx, 1
@@ -339,22 +335,22 @@ Part1:
 	jmp .end_if8
 .if8:
 	mov rax, 0
-	mov byte [rbp-16], al; VAR_ASSIGNMENT ARRAY numBuffer[0]
+	mov byte [rbp-12], al; VAR_ASSIGNMENT ARRAY numBuffer[0]
 	mov rax, 0
-	mov byte [rbp-15], al; VAR_ASSIGNMENT ARRAY numBuffer[1]
+	mov byte [rbp-11], al; VAR_ASSIGNMENT ARRAY numBuffer[1]
 	mov rax, 0
-	mov byte [rbp-14], al; VAR_ASSIGNMENT ARRAY numBuffer[2]
+	mov byte [rbp-10], al; VAR_ASSIGNMENT ARRAY numBuffer[2]
 	mov rax, 0
-	mov byte [rbp-17], al; VAR_ASSIGNMENT else variable buffLength
+	mov byte [rbp-13], al; VAR_ASSIGNMENT else variable buffLength
 	jmp .end_if8
 .end_if8:
 	jmp .end_if7
 .else_if7:
-	movzx rax, byte [rbp-42]; printExpression, left identifier, rbp variable byte
-	mov rbx, 58; printExpression, right int
+	movzx rax, byte [rbp-40]; printExpression, left identifier, rbp variable byte
+	mov rbx, 58; printExpression, right char ':'
 	mov rcx, 0
 	mov rdx, 1
-	cmp al, bl
+	cmp ax, bx
 	cmove rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
@@ -362,7 +358,7 @@ Part1:
 	jmp .else_if9
 .if9:
 	mov rax, 0
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 100; printExpression, right int
@@ -370,7 +366,7 @@ Part1:
 	mul qword rbx
 	push rax; printExpression, leftPrinted, save left
 	mov rax, 1
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 10; printExpression, right int
@@ -381,25 +377,25 @@ Part1:
 	add rax, rbx
 	push rax; printExpression, leftPrinted, save left
 	mov rax, 2
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rbx, r12; printExpression, nodeType=1, array index
 	pop rax; printExpression, leftPrinted, recover left
 	add rax, rbx
-	mov byte [rbp-18], al; VAR_ASSIGNMENT else variable currentGame
+	mov byte [rbp-14], al; VAR_ASSIGNMENT else variable currentGame
 	jmp .end_if9
 .else_if9:
-	movzx rax, byte [rbp-42]; printExpression, left identifier, rbp variable byte
-	mov rbx, 59; printExpression, right int
+	movzx rax, byte [rbp-40]; printExpression, left identifier, rbp variable byte
+	mov rbx, 59; printExpression, right char ';'
 	mov rcx, 0
 	mov rdx, 1
-	cmp al, bl
+	cmp ax, bx
 	cmove rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
 	jnz .if10
 	jmp .else_if10
 .if10:
-	mov eax, dword [rbp-31]; printExpression struct Set.red
+	mov eax, dword [rbp-27]; printExpression struct Set.red
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 12; printExpression, right int
 	pop rax; printExpression, leftPrinted, recover left
@@ -409,7 +405,7 @@ Part1:
 	cmovg rcx, rdx
 	mov rax, rcx; printConditionalMove
 	push rax; printExpression, leftPrinted, save left
-	mov eax, dword [rbp-27]; printExpression struct Set.green
+	mov eax, dword [rbp-23]; printExpression struct Set.green
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 13; printExpression, right int
 	pop rax; printExpression, leftPrinted, recover left
@@ -422,7 +418,7 @@ Part1:
 	pop rax; printExpression, leftPrinted, recover left
 	or eax, ebx
 	push rax; printExpression, leftPrinted, save left
-	mov eax, dword [rbp-23]; printExpression struct Set.blue
+	mov eax, dword [rbp-19]; printExpression struct Set.blue
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 14; printExpression, right int
 	pop rax; printExpression, leftPrinted, recover left
@@ -439,26 +435,22 @@ Part1:
 	jmp .end_if11
 .if11:
 	mov rax, 0
-	mov byte [rbp-33], al; VAR_ASSIGNMENT else variable possible
+	mov dword [rbp-31], eax; VAR_ASSIGNMENT else variable possible
 	jmp .end_if11
 .end_if11:
 	mov rax, 0
-	mov dword [rbp-31], eax; VAR_ASSIGNMENT STRUCT Set.red
+	mov dword [rbp-27], eax; VAR_ASSIGNMENT STRUCT Set.red
 	mov rax, 0
-	mov dword [rbp-27], eax; VAR_ASSIGNMENT STRUCT Set.green
+	mov dword [rbp-23], eax; VAR_ASSIGNMENT STRUCT Set.green
 	mov rax, 0
-	mov dword [rbp-23], eax; VAR_ASSIGNMENT STRUCT Set.blue
-	movzx rax, byte [rbp-32]; printExpression, left identifier, rbp variable setCount
-	mov rbx, 1; printExpression, right int
-	add al, bl
-	mov byte [rbp-32], al; VAR_ASSIGNMENT else variable setCount
+	mov dword [rbp-19], eax; VAR_ASSIGNMENT STRUCT Set.blue
 	jmp .end_if10
 .else_if10:
-	movzx rax, byte [rbp-42]; printExpression, left identifier, rbp variable byte
-	mov rbx, 114; printExpression, right int
+	movzx rax, byte [rbp-40]; printExpression, left identifier, rbp variable byte
+	mov rbx, 114; printExpression, right char 'r'
 	mov rcx, 0
 	mov rdx, 1
-	cmp al, bl
+	cmp ax, bx
 	cmove rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
@@ -467,7 +459,7 @@ Part1:
 .if12:
 	sub rsp, 8
 	mov rax, 0
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 100; printExpression, right int
@@ -475,7 +467,7 @@ Part1:
 	mul qword rbx
 	push rax; printExpression, leftPrinted, save left
 	mov rax, 1
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 10; printExpression, right int
@@ -486,25 +478,25 @@ Part1:
 	add rax, rbx
 	push rax; printExpression, leftPrinted, save left
 	mov rax, 2
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rbx, r12; printExpression, nodeType=1, array index
 	pop rax; printExpression, leftPrinted, recover left
 	add rax, rbx
-	mov word [rbp-44], ax; VAR_DECL_ASSIGN else variable number
-	movzx rax, word [rbp-44]; printExpression variable number
-	mov dword [rbp-31], eax; VAR_ASSIGNMENT STRUCT currentSet.red
-	mov rax, qword [rbp-41]; printExpression, left identifier, rbp variable i
+	mov word [rbp-42], ax; VAR_DECL_ASSIGN else variable number
+	movzx rax, word [rbp-42]; printExpression variable number
+	mov dword [rbp-27], eax; VAR_ASSIGNMENT STRUCT currentSet.red
+	mov rax, qword [rbp-39]; printExpression, left identifier, rbp variable i
 	mov rbx, 2; printExpression, right int
 	add rax, rbx
-	mov qword [rbp-41], rax; VAR_ASSIGNMENT else variable i
+	mov qword [rbp-39], rax; VAR_ASSIGNMENT else variable i
 	add rsp, 8
 	jmp .end_if12
 .else_if12:
-	movzx rax, byte [rbp-42]; printExpression, left identifier, rbp variable byte
-	mov rbx, 103; printExpression, right int
+	movzx rax, byte [rbp-40]; printExpression, left identifier, rbp variable byte
+	mov rbx, 103; printExpression, right char 'g'
 	mov rcx, 0
 	mov rdx, 1
-	cmp al, bl
+	cmp ax, bx
 	cmove rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
@@ -513,7 +505,7 @@ Part1:
 .if13:
 	sub rsp, 8
 	mov rax, 0
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 100; printExpression, right int
@@ -521,7 +513,7 @@ Part1:
 	mul qword rbx
 	push rax; printExpression, leftPrinted, save left
 	mov rax, 1
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 10; printExpression, right int
@@ -532,25 +524,25 @@ Part1:
 	add rax, rbx
 	push rax; printExpression, leftPrinted, save left
 	mov rax, 2
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rbx, r12; printExpression, nodeType=1, array index
 	pop rax; printExpression, leftPrinted, recover left
 	add rax, rbx
-	mov word [rbp-44], ax; VAR_DECL_ASSIGN else variable number
-	movzx rax, word [rbp-44]; printExpression variable number
-	mov dword [rbp-27], eax; VAR_ASSIGNMENT STRUCT currentSet.green
-	mov rax, qword [rbp-41]; printExpression, left identifier, rbp variable i
+	mov word [rbp-42], ax; VAR_DECL_ASSIGN else variable number
+	movzx rax, word [rbp-42]; printExpression variable number
+	mov dword [rbp-23], eax; VAR_ASSIGNMENT STRUCT currentSet.green
+	mov rax, qword [rbp-39]; printExpression, left identifier, rbp variable i
 	mov rbx, 4; printExpression, right int
 	add rax, rbx
-	mov qword [rbp-41], rax; VAR_ASSIGNMENT else variable i
+	mov qword [rbp-39], rax; VAR_ASSIGNMENT else variable i
 	add rsp, 8
 	jmp .end_if13
 .else_if13:
-	movzx rax, byte [rbp-42]; printExpression, left identifier, rbp variable byte
-	mov rbx, 98; printExpression, right int
+	movzx rax, byte [rbp-40]; printExpression, left identifier, rbp variable byte
+	mov rbx, 98; printExpression, right char 'b'
 	mov rcx, 0
 	mov rdx, 1
-	cmp al, bl
+	cmp ax, bx
 	cmove rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
@@ -559,7 +551,7 @@ Part1:
 .if14:
 	sub rsp, 8
 	mov rax, 0
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 100; printExpression, right int
@@ -567,7 +559,7 @@ Part1:
 	mul qword rbx
 	push rax; printExpression, leftPrinted, save left
 	mov rax, 1
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 10; printExpression, right int
@@ -578,17 +570,17 @@ Part1:
 	add rax, rbx
 	push rax; printExpression, leftPrinted, save left
 	mov rax, 2
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rbx, r12; printExpression, nodeType=1, array index
 	pop rax; printExpression, leftPrinted, recover left
 	add rax, rbx
-	mov word [rbp-44], ax; VAR_DECL_ASSIGN else variable number
-	movzx rax, word [rbp-44]; printExpression variable number
-	mov dword [rbp-23], eax; VAR_ASSIGNMENT STRUCT currentSet.blue
-	mov rax, qword [rbp-41]; printExpression, left identifier, rbp variable i
+	mov word [rbp-42], ax; VAR_DECL_ASSIGN else variable number
+	movzx rax, word [rbp-42]; printExpression variable number
+	mov dword [rbp-19], eax; VAR_ASSIGNMENT STRUCT currentSet.blue
+	mov rax, qword [rbp-39]; printExpression, left identifier, rbp variable i
 	mov rbx, 3; printExpression, right int
 	add rax, rbx
-	mov qword [rbp-41], rax; VAR_ASSIGNMENT else variable i
+	mov qword [rbp-39], rax; VAR_ASSIGNMENT else variable i
 	add rsp, 8
 	jmp .end_if14
 .end_if14:
@@ -601,9 +593,9 @@ Part1:
 .end_if1:
 	add rsp, 7
 .skip_label1:
-	mov rax, qword [rbp-41]; LOOP i
+	mov rax, qword [rbp-39]; LOOP i
 	inc rax
-	mov qword [rbp-41], rax; LOOP i
+	mov qword [rbp-39], rax; LOOP i
 	jmp .label1
 .not_label1:
 	push rdi
@@ -635,7 +627,7 @@ Part1:
 	push r9
 	push r10
 ; =============== FUNC CALL + VARIABLE ===============
-	mov rdi, qword [rbp-12]; variable sum
+	mov rdi, qword [rbp-8]; variable sum
 	call print_ui64_newline
 ; =============== END FUNC CALL + VARIABLE ===============
 	pop r10
@@ -646,9 +638,9 @@ Part1:
 	pop rsi
 	pop rdi
 	mov rax, 0
-	add rsp, 43
+	add rsp, 42
 	jmp .exit
-	add rsp, 43
+	add rsp, 42
 .exit:
 ; =============== EPILOGUE ===============
 	pop rbp
@@ -663,100 +655,100 @@ Part2:
 ; =============== END PROLOGUE ===============
 	sub rsp, 40
 	mov rax, 0
-	mov qword [rbp-12], rax; VAR_DECL_ASSIGN else variable sum
+	mov qword [rbp-8], rax; VAR_DECL_ASSIGN else variable sum
 	mov rax, 0
-	mov byte [rbp-16], al; VAR_DECL_ASSIGN ARRAY variable numBuffer[0]
+	mov byte [rbp-12], al; VAR_DECL_ASSIGN ARRAY variable numBuffer[0]
 	mov rax, 0
-	mov byte [rbp-15], al; VAR_DECL_ASSIGN ARRAY variable numBuffer[1]
+	mov byte [rbp-11], al; VAR_DECL_ASSIGN ARRAY variable numBuffer[1]
 	mov rax, 0
-	mov byte [rbp-14], al; VAR_DECL_ASSIGN ARRAY variable numBuffer[2]
+	mov byte [rbp-10], al; VAR_DECL_ASSIGN ARRAY variable numBuffer[2]
 	mov rax, 0
-	mov byte [rbp-17], al; VAR_DECL_ASSIGN else variable buffLength
+	mov byte [rbp-13], al; VAR_DECL_ASSIGN else variable buffLength
 	mov rax, 0
-	mov dword [rbp-30], eax; VAR_DECL_ASSIGN STRUCT Set highest.red
+	mov dword [rbp-26], eax; VAR_DECL_ASSIGN STRUCT Set highest.red
 	mov rax, 0
-	mov dword [rbp-26], eax; VAR_DECL_ASSIGN STRUCT Set highest.green
+	mov dword [rbp-22], eax; VAR_DECL_ASSIGN STRUCT Set highest.green
 	mov rax, 0
-	mov dword [rbp-22], eax; VAR_DECL_ASSIGN STRUCT Set highest.blue
+	mov dword [rbp-18], eax; VAR_DECL_ASSIGN STRUCT Set highest.blue
 	mov rax, 0
-	mov qword [rbp-38], rax; LOOP i
+	mov qword [rbp-34], rax; LOOP i
 .label2:
 	mov rax, qword rdi; printExpression variable size
-	cmp qword [rbp-38], rax; LOOP i
+	cmp qword [rbp-34], rax; LOOP i
 	jl .inside_label2
 	jmp .not_label2
 .inside_label2:
 	sub rsp, 1
-	mov rax, qword [rbp-38]; printExpression variable i
+	mov rax, qword [rbp-34]; printExpression variable i
 	movzx r12, byte [s_buffer+rax*1]; printExpression array s_buffer
 	mov rax, r12
-	mov byte [rbp-39], al; VAR_DECL_ASSIGN else variable byte
-	movzx rax, byte [rbp-39]; printExpression, left identifier, rbp variable byte
-	mov rbx, 10; printExpression, right int
+	mov byte [rbp-35], al; VAR_DECL_ASSIGN else variable byte
+	movzx rax, byte [rbp-35]; printExpression, left identifier, rbp variable byte
+	mov rbx, 10; printExpression, right char '\n'
 	mov rcx, 0
 	mov rdx, 1
-	cmp al, bl
+	cmp ax, bx
 	cmove rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
 	jnz .if15
 	jmp .else_if15
 .if15:
-	mov eax, dword [rbp-30]; printExpression struct Set.red
+	mov eax, dword [rbp-26]; printExpression struct Set.red
 	push rax; printExpression, leftPrinted, save left
-	mov eax, dword [rbp-26]; printExpression struct Set.green
+	mov eax, dword [rbp-22]; printExpression struct Set.green
 	mov rbx, rax; printExpression, nodeType=1, struct property
 	pop rax; printExpression, leftPrinted, recover left
 	mul qword rbx
 	push rax; printExpression, leftPrinted, save left
-	mov eax, dword [rbp-22]; printExpression struct Set.blue
+	mov eax, dword [rbp-18]; printExpression struct Set.blue
 	mov rbx, rax; printExpression, nodeType=1, struct property
 	pop rax; printExpression, leftPrinted, recover left
 	mul qword rbx
 	mov rbx, rax; printExpression, nodeType=1
-	mov rax, qword [rbp-12]; printExpression, left identifier, rbp variable sum
+	mov rax, qword [rbp-8]; printExpression, left identifier, rbp variable sum
 	add rax, rbx
-	mov qword [rbp-12], rax; VAR_ASSIGNMENT else variable sum
+	mov qword [rbp-8], rax; VAR_ASSIGNMENT else variable sum
 	mov rax, 0
-	mov dword [rbp-30], eax; VAR_ASSIGNMENT STRUCT Set.red
+	mov dword [rbp-26], eax; VAR_ASSIGNMENT STRUCT Set.red
 	mov rax, 0
-	mov dword [rbp-26], eax; VAR_ASSIGNMENT STRUCT Set.green
+	mov dword [rbp-22], eax; VAR_ASSIGNMENT STRUCT Set.green
 	mov rax, 0
-	mov dword [rbp-22], eax; VAR_ASSIGNMENT STRUCT Set.blue
-	mov rax, qword [rbp-38]; printExpression, left identifier, rbp variable i
+	mov dword [rbp-18], eax; VAR_ASSIGNMENT STRUCT Set.blue
+	mov rax, qword [rbp-34]; printExpression, left identifier, rbp variable i
 	mov rbx, 4; printExpression, right int
 	add rax, rbx
-	mov qword [rbp-38], rax; VAR_ASSIGNMENT else variable i
+	mov qword [rbp-34], rax; VAR_ASSIGNMENT else variable i
 	jmp .end_if15
 .else_if15:
-	movzx rax, byte [rbp-39]; printExpression, left identifier, rbp variable byte
-	mov rbx, 48; printExpression, right int
+	movzx rax, byte [rbp-35]; printExpression, left identifier, rbp variable byte
+	mov rbx, 48; printExpression, right char '0'
 	mov rcx, 0
 	mov rdx, 1
-	cmp al, bl
+	cmp ax, bx
 	cmovge rcx, rdx
 	mov rax, rcx; printConditionalMove
 	push rax; printExpression, leftPrinted, save left
-	movzx rax, byte [rbp-39]; printExpression, left identifier, rbp variable byte
-	mov rbx, 57; printExpression, right int
+	movzx rax, byte [rbp-35]; printExpression, left identifier, rbp variable byte
+	mov rbx, 57; printExpression, right char '9'
 	mov rcx, 0
 	mov rdx, 1
-	cmp al, bl
+	cmp ax, bx
 	cmovle rcx, rdx
 	mov rax, rcx; printConditionalMove
 	mov rbx, rax; printExpression, nodeType=1
 	pop rax; printExpression, leftPrinted, recover left
-	and al, bl
+	and ax, bx
 	test rax, rax
 	jnz .if16
 	jmp .else_if16
 .if16:
 	sub rsp, 1
-	movzx rax, byte [rbp-39]; printExpression, left identifier, rbp variable byte
-	mov rbx, 48; printExpression, right int
-	sub ax, bx
-	mov byte [rbp-40], al; VAR_DECL_ASSIGN else variable number
-	movzx rax, byte [rbp-17]; printExpression, left identifier, rbp variable buffLength
+	movzx rax, byte [rbp-35]; printExpression, left identifier, rbp variable byte
+	mov rbx, 48; printExpression, right char '0'
+	sub eax, ebx
+	mov byte [rbp-36], al; VAR_DECL_ASSIGN else variable number
+	movzx rax, byte [rbp-13]; printExpression, left identifier, rbp variable buffLength
 	mov rbx, 0; printExpression, right int
 	mov rcx, 0
 	mov rdx, 1
@@ -769,12 +761,12 @@ Part2:
 .if17:
 	mov rax, 2
 	push rax
-	movzx rax, byte [rbp-40]; printExpression variable number
+	movzx rax, byte [rbp-36]; printExpression variable number
 	pop r11
-	mov byte [rbp-16+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-12+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
 	jmp .end_if17
 .else_if17:
-	movzx rax, byte [rbp-17]; printExpression, left identifier, rbp variable buffLength
+	movzx rax, byte [rbp-13]; printExpression, left identifier, rbp variable buffLength
 	mov rbx, 1; printExpression, right int
 	mov rcx, 0
 	mov rdx, 1
@@ -788,63 +780,63 @@ Part2:
 	mov rax, 1
 	push rax
 	mov rax, 2
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	pop r11
-	mov byte [rbp-16+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-12+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
 	mov rax, 2
 	push rax
-	movzx rax, byte [rbp-40]; printExpression variable number
+	movzx rax, byte [rbp-36]; printExpression variable number
 	pop r11
-	mov byte [rbp-16+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-12+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
 	jmp .end_if18
 .else_if18:
 	mov rax, 0
 	push rax
 	mov rax, 1
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	pop r11
-	mov byte [rbp-16+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-12+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
 	mov rax, 1
 	push rax
 	mov rax, 2
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	pop r11
-	mov byte [rbp-16+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-12+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
 	mov rax, 2
 	push rax
-	movzx rax, byte [rbp-40]; printExpression variable number
+	movzx rax, byte [rbp-36]; printExpression variable number
 	pop r11
-	mov byte [rbp-16+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
+	mov byte [rbp-12+r11*1], al; VAR_ASSIGNMENT ARRAY numBuffer
 .end_if18:
 .end_if17:
-	movzx rax, byte [rbp-17]; printExpression, left identifier, rbp variable buffLength
+	movzx rax, byte [rbp-13]; printExpression, left identifier, rbp variable buffLength
 	mov rbx, 1; printExpression, right int
 	add al, bl
-	mov byte [rbp-17], al; VAR_ASSIGNMENT else variable buffLength
+	mov byte [rbp-13], al; VAR_ASSIGNMENT else variable buffLength
 	add rsp, 1
 	jmp .end_if16
 .else_if16:
-	movzx rax, byte [rbp-39]; printExpression, left identifier, rbp variable byte
-	mov rbx, 32; printExpression, right int
+	movzx rax, byte [rbp-35]; printExpression, left identifier, rbp variable byte
+	mov rbx, 32; printExpression, right char ' '
 	mov rcx, 0
 	mov rdx, 1
-	cmp al, bl
+	cmp ax, bx
 	cmove rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
 	jnz .if19
 	jmp .else_if19
 .if19:
-	mov rax, qword [rbp-38]; printExpression, left identifier, rbp variable i
+	mov rax, qword [rbp-34]; printExpression, left identifier, rbp variable i
 	mov rbx, 1; printExpression, right int
 	add rax, rbx
 	movzx r12, byte [s_buffer+rax*1]; printExpression array s_buffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
-	mov rbx, 48; printExpression, right int
+	mov rbx, 48; printExpression, right char '0'
 	pop rax; printExpression, leftPrinted, recover left
 	mov rcx, 0
 	mov rdx, 1
@@ -852,13 +844,13 @@ Part2:
 	cmovge rcx, rdx
 	mov rax, rcx; printConditionalMove
 	push rax; printExpression, leftPrinted, save left
-	mov rax, qword [rbp-38]; printExpression, left identifier, rbp variable i
+	mov rax, qword [rbp-34]; printExpression, left identifier, rbp variable i
 	mov rbx, 1; printExpression, right int
 	add rax, rbx
 	movzx r12, byte [s_buffer+rax*1]; printExpression array s_buffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
-	mov rbx, 57; printExpression, right int
+	mov rbx, 57; printExpression, right char '9'
 	pop rax; printExpression, leftPrinted, recover left
 	mov rcx, 0
 	mov rdx, 1
@@ -873,22 +865,22 @@ Part2:
 	jmp .end_if20
 .if20:
 	mov rax, 0
-	mov byte [rbp-16], al; VAR_ASSIGNMENT ARRAY numBuffer[0]
+	mov byte [rbp-12], al; VAR_ASSIGNMENT ARRAY numBuffer[0]
 	mov rax, 0
-	mov byte [rbp-15], al; VAR_ASSIGNMENT ARRAY numBuffer[1]
+	mov byte [rbp-11], al; VAR_ASSIGNMENT ARRAY numBuffer[1]
 	mov rax, 0
-	mov byte [rbp-14], al; VAR_ASSIGNMENT ARRAY numBuffer[2]
+	mov byte [rbp-10], al; VAR_ASSIGNMENT ARRAY numBuffer[2]
 	mov rax, 0
-	mov byte [rbp-17], al; VAR_ASSIGNMENT else variable buffLength
+	mov byte [rbp-13], al; VAR_ASSIGNMENT else variable buffLength
 	jmp .end_if20
 .end_if20:
 	jmp .end_if19
 .else_if19:
-	movzx rax, byte [rbp-39]; printExpression, left identifier, rbp variable byte
-	mov rbx, 114; printExpression, right int
+	movzx rax, byte [rbp-35]; printExpression, left identifier, rbp variable byte
+	mov rbx, 114; printExpression, right char 'r'
 	mov rcx, 0
 	mov rdx, 1
-	cmp al, bl
+	cmp ax, bx
 	cmove rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
@@ -897,7 +889,7 @@ Part2:
 .if21:
 	sub rsp, 2
 	mov rax, 0
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 100; printExpression, right int
@@ -905,7 +897,7 @@ Part2:
 	mul qword rbx
 	push rax; printExpression, leftPrinted, save left
 	mov rax, 1
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 10; printExpression, right int
@@ -916,14 +908,14 @@ Part2:
 	add rax, rbx
 	push rax; printExpression, leftPrinted, save left
 	mov rax, 2
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rbx, r12; printExpression, nodeType=1, array index
 	pop rax; printExpression, leftPrinted, recover left
 	add rax, rbx
-	mov word [rbp-41], ax; VAR_DECL_ASSIGN else variable number
-	mov eax, dword [rbp-30]; printExpression struct Set.red
+	mov word [rbp-37], ax; VAR_DECL_ASSIGN else variable number
+	mov eax, dword [rbp-26]; printExpression struct Set.red
 	mov rbx, rax; printExpression, nodeType=1, struct property
-	movzx rax, word [rbp-41]; printExpression, left identifier, rbp variable number
+	movzx rax, word [rbp-37]; printExpression, left identifier, rbp variable number
 	mov rcx, 0
 	mov rdx, 1
 	cmp eax, ebx
@@ -933,22 +925,22 @@ Part2:
 	jnz .if22
 	jmp .end_if22
 .if22:
-	movzx rax, word [rbp-41]; printExpression variable number
-	mov dword [rbp-30], eax; VAR_ASSIGNMENT STRUCT highest.red
+	movzx rax, word [rbp-37]; printExpression variable number
+	mov dword [rbp-26], eax; VAR_ASSIGNMENT STRUCT highest.red
 	jmp .end_if22
 .end_if22:
-	mov rax, qword [rbp-38]; printExpression, left identifier, rbp variable i
+	mov rax, qword [rbp-34]; printExpression, left identifier, rbp variable i
 	mov rbx, 2; printExpression, right int
 	add rax, rbx
-	mov qword [rbp-38], rax; VAR_ASSIGNMENT else variable i
+	mov qword [rbp-34], rax; VAR_ASSIGNMENT else variable i
 	add rsp, 2
 	jmp .end_if21
 .else_if21:
-	movzx rax, byte [rbp-39]; printExpression, left identifier, rbp variable byte
-	mov rbx, 103; printExpression, right int
+	movzx rax, byte [rbp-35]; printExpression, left identifier, rbp variable byte
+	mov rbx, 103; printExpression, right char 'g'
 	mov rcx, 0
 	mov rdx, 1
-	cmp al, bl
+	cmp ax, bx
 	cmove rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
@@ -957,7 +949,7 @@ Part2:
 .if23:
 	sub rsp, 2
 	mov rax, 0
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 100; printExpression, right int
@@ -965,7 +957,7 @@ Part2:
 	mul qword rbx
 	push rax; printExpression, leftPrinted, save left
 	mov rax, 1
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 10; printExpression, right int
@@ -976,14 +968,14 @@ Part2:
 	add rax, rbx
 	push rax; printExpression, leftPrinted, save left
 	mov rax, 2
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rbx, r12; printExpression, nodeType=1, array index
 	pop rax; printExpression, leftPrinted, recover left
 	add rax, rbx
-	mov word [rbp-41], ax; VAR_DECL_ASSIGN else variable number
-	mov eax, dword [rbp-26]; printExpression struct Set.green
+	mov word [rbp-37], ax; VAR_DECL_ASSIGN else variable number
+	mov eax, dword [rbp-22]; printExpression struct Set.green
 	mov rbx, rax; printExpression, nodeType=1, struct property
-	movzx rax, word [rbp-41]; printExpression, left identifier, rbp variable number
+	movzx rax, word [rbp-37]; printExpression, left identifier, rbp variable number
 	mov rcx, 0
 	mov rdx, 1
 	cmp eax, ebx
@@ -993,22 +985,22 @@ Part2:
 	jnz .if24
 	jmp .end_if24
 .if24:
-	movzx rax, word [rbp-41]; printExpression variable number
-	mov dword [rbp-26], eax; VAR_ASSIGNMENT STRUCT highest.green
+	movzx rax, word [rbp-37]; printExpression variable number
+	mov dword [rbp-22], eax; VAR_ASSIGNMENT STRUCT highest.green
 	jmp .end_if24
 .end_if24:
-	mov rax, qword [rbp-38]; printExpression, left identifier, rbp variable i
+	mov rax, qword [rbp-34]; printExpression, left identifier, rbp variable i
 	mov rbx, 4; printExpression, right int
 	add rax, rbx
-	mov qword [rbp-38], rax; VAR_ASSIGNMENT else variable i
+	mov qword [rbp-34], rax; VAR_ASSIGNMENT else variable i
 	add rsp, 2
 	jmp .end_if23
 .else_if23:
-	movzx rax, byte [rbp-39]; printExpression, left identifier, rbp variable byte
-	mov rbx, 98; printExpression, right int
+	movzx rax, byte [rbp-35]; printExpression, left identifier, rbp variable byte
+	mov rbx, 98; printExpression, right char 'b'
 	mov rcx, 0
 	mov rdx, 1
-	cmp al, bl
+	cmp ax, bx
 	cmove rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
@@ -1017,7 +1009,7 @@ Part2:
 .if25:
 	sub rsp, 2
 	mov rax, 0
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 100; printExpression, right int
@@ -1025,7 +1017,7 @@ Part2:
 	mul qword rbx
 	push rax; printExpression, leftPrinted, save left
 	mov rax, 1
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
 	mov rbx, 10; printExpression, right int
@@ -1036,14 +1028,14 @@ Part2:
 	add rax, rbx
 	push rax; printExpression, leftPrinted, save left
 	mov rax, 2
-	movzx r12, byte [rbp-16+rax*1]; printExpression array numBuffer
+	movzx r12, byte [rbp-12+rax*1]; printExpression array numBuffer
 	mov rbx, r12; printExpression, nodeType=1, array index
 	pop rax; printExpression, leftPrinted, recover left
 	add rax, rbx
-	mov word [rbp-41], ax; VAR_DECL_ASSIGN else variable number
-	mov eax, dword [rbp-22]; printExpression struct Set.blue
+	mov word [rbp-37], ax; VAR_DECL_ASSIGN else variable number
+	mov eax, dword [rbp-18]; printExpression struct Set.blue
 	mov rbx, rax; printExpression, nodeType=1, struct property
-	movzx rax, word [rbp-41]; printExpression, left identifier, rbp variable number
+	movzx rax, word [rbp-37]; printExpression, left identifier, rbp variable number
 	mov rcx, 0
 	mov rdx, 1
 	cmp eax, ebx
@@ -1053,14 +1045,14 @@ Part2:
 	jnz .if26
 	jmp .end_if26
 .if26:
-	movzx rax, word [rbp-41]; printExpression variable number
-	mov dword [rbp-22], eax; VAR_ASSIGNMENT STRUCT highest.blue
+	movzx rax, word [rbp-37]; printExpression variable number
+	mov dword [rbp-18], eax; VAR_ASSIGNMENT STRUCT highest.blue
 	jmp .end_if26
 .end_if26:
-	mov rax, qword [rbp-38]; printExpression, left identifier, rbp variable i
+	mov rax, qword [rbp-34]; printExpression, left identifier, rbp variable i
 	mov rbx, 3; printExpression, right int
 	add rax, rbx
-	mov qword [rbp-38], rax; VAR_ASSIGNMENT else variable i
+	mov qword [rbp-34], rax; VAR_ASSIGNMENT else variable i
 	add rsp, 2
 	jmp .end_if25
 .end_if25:
@@ -1071,9 +1063,9 @@ Part2:
 .end_if15:
 	add rsp, 1
 .skip_label2:
-	mov rax, qword [rbp-38]; LOOP i
+	mov rax, qword [rbp-34]; LOOP i
 	inc rax
-	mov qword [rbp-38], rax; LOOP i
+	mov qword [rbp-34], rax; LOOP i
 	jmp .label2
 .not_label2:
 	push rdi
@@ -1105,7 +1097,7 @@ Part2:
 	push r9
 	push r10
 ; =============== FUNC CALL + VARIABLE ===============
-	mov rdi, qword [rbp-12]; variable sum
+	mov rdi, qword [rbp-8]; variable sum
 	call print_ui64_newline
 ; =============== END FUNC CALL + VARIABLE ===============
 	pop r10
