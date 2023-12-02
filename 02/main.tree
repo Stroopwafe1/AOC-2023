@@ -10,7 +10,6 @@ ui8 Part1(ui64 size) {
 	ui64 sum = 0;
 
 	ui8[3] numBuffer = {0, 0, 0};
-	// insert at 2 - buffLength;
 	ui8 buffLength = 0;
 	ui8 currentGame = 0;
 	Set currentSet = {0, 0, 0};
@@ -77,7 +76,57 @@ ui8 Part1(ui64 size) {
 }
 
 ui8 Part2(ui64 size) {
+	ui64 sum = 0;
 
+	ui8[3] numBuffer = {0, 0, 0};
+	ui8 buffLength = 0;
+	Set highest = {0, 0, 0};
+	loop i, 0..size {
+		ui8 byte = s_buffer[i];
+		if byte == 10 { // Newline
+			sum += ((highest.red) * (highest.green)) * (highest.blue);
+			highest = {0, 0, 0};
+			i += 4;
+		} else if (byte >= 48) & (byte <= 57) {
+			ui8 number = byte - 48;
+			if buffLength == 0 {
+				numBuffer[2] = number;
+			} else if buffLength == 1 {
+				numBuffer[1] = numBuffer[2];
+				numBuffer[2] = number;
+			} else {
+				numBuffer[0] = numBuffer[1];
+				numBuffer[1] = numBuffer[2];
+				numBuffer[2] = number;
+			}
+			buffLength += 1;
+		} else if byte == 32 { // Space
+			if (s_buffer[i + 1] >= 48) & (s_buffer[i + 1] <= 57) {
+				numBuffer = {0, 0, 0};
+				buffLength = 0;
+			}
+		} else if byte == 114 { // 'r'
+			ui16 number = ((numBuffer[0] * 100) + (numBuffer[1] * 10)) + numBuffer[2];
+			if number > (highest.red) {
+				highest.red = number;
+			}
+			i += 2;
+		} else if byte == 103 { // 'g'
+			ui16 number = ((numBuffer[0] * 100) + (numBuffer[1] * 10)) + numBuffer[2];
+			if number > (highest.green) {
+				highest.green = number;
+			}
+			i += 4;
+		} else if byte == 98 { // 'b'
+			ui16 number = ((numBuffer[0] * 100) + (numBuffer[1] * 10)) + numBuffer[2];
+			if number > (highest.blue) {
+				highest.blue = number;
+			}
+			i += 3;
+		}
+	}
+	stdout.write("Power part 2: ");
+	stdout.writeln(sum);
 	return 0;
 }
 
@@ -93,6 +142,6 @@ ui8 main(cstring[] argv) {
 		return -1;
 	}
 	Part1(size);
-	//Part2(size);
+	Part2(size);
 	return 0;
 }
