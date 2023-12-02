@@ -1,0 +1,98 @@
+ui8[10300] s_buffer;
+
+struct Set {
+	ui32 red;
+	ui32 green;
+	ui32 blue;
+}
+
+ui8 Part1(ui64 size) {
+	ui64 sum = 0;
+
+	ui8[3] numBuffer = {0, 0, 0};
+	// insert at 2 - buffLength;
+	ui8 buffLength = 0;
+	ui8 currentGame = 0;
+	Set currentSet = {0, 0, 0};
+	ui8 setCount = 0;
+	ui8 possible = 1;
+	loop i, 0..size {
+		ui8 byte = s_buffer[i];
+		if byte == 10 { // Newline
+			if (((currentSet.red) > 12) | ((currentSet.green) > 13)) | ((currentSet.blue) > 14) {
+				possible = 0;
+			}
+			if possible {
+				sum += currentGame;
+			}
+			currentGame = 0;
+			setCount = 0;
+			currentSet = {0, 0, 0};
+			possible = 1;
+			i += 4; // Skip 'Game'
+		} else if (byte >= 48) & (byte <= 57) {
+			ui8 number = byte - 48;
+			if buffLength == 0 {
+				numBuffer[2] = number;
+			} else if buffLength == 1 {
+				numBuffer[1] = numBuffer[2];
+				numBuffer[2] = number;
+			} else {
+				numBuffer[0] = numBuffer[1];
+				numBuffer[1] = numBuffer[2];
+				numBuffer[2] = number;
+			}
+			buffLength += 1;
+		} else if byte == 32 { // Space
+			if (s_buffer[i + 1] >= 48) & (s_buffer[i + 1] <= 57) {
+				numBuffer = {0, 0, 0};
+				buffLength = 0;
+			}
+		} else if byte == 58 { // Colon
+			currentGame = ((numBuffer[0] * 100) + (numBuffer[1] * 10)) + numBuffer[2];
+		} else if byte == 59 { // Semicolon
+			// Check if set is valid
+			if (((currentSet.red) > 12) | ((currentSet.green) > 13)) | ((currentSet.blue) > 14) {
+				possible = 0;
+			}
+			currentSet = {0, 0, 0};
+			setCount += 1;
+		} else if byte == 114 { // 'r'
+			ui16 number = ((numBuffer[0] * 100) + (numBuffer[1] * 10)) + numBuffer[2];
+			currentSet.red = number;
+			i += 2;
+		} else if byte == 103 { // 'g'
+			ui16 number = ((numBuffer[0] * 100) + (numBuffer[1] * 10)) + numBuffer[2];
+			currentSet.green = number;
+			i += 4;
+		} else if byte == 98 { // 'b'
+			ui16 number = ((numBuffer[0] * 100) + (numBuffer[1] * 10)) + numBuffer[2];
+			currentSet.blue = number;
+			i += 3;
+		}
+	}
+	stdout.write("Possible games sum part 1: ");
+	stdout.writeln(sum);
+	return 0;
+}
+
+ui8 Part2(ui64 size) {
+
+	return 0;
+}
+
+ui8 main(cstring[] argv) {
+	i32 fd = SYS_OPEN(argv[1], 0, 0);
+	if (fd < 0) {
+		stdout.writeln("Could not open file");
+		return -1;
+	}
+	ui64 size = SYS_READ(fd, s_buffer, 10290);
+	if (size == 0) {
+		stdout.writeln("Could not read from file");
+		return -1;
+	}
+	Part1(size);
+	//Part2(size);
+	return 0;
+}
