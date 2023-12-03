@@ -18,7 +18,7 @@ ui8 Part1(ui64 size) {
 	ui8[3] numBuffer = {0, 0, 0};
 	ui8 buffLength = 0;
 
-	ui32 lineLength = 0;
+	ui8 lineLength = 0;
 	loop i, 0..size {
 		ui8 byte = s_buffer[i];
 		if (byte >= '0') & (byte <= '9') {
@@ -52,13 +52,6 @@ ui8 Part1(ui64 size) {
 			}
 		}
 	}
-	loop i, 0..s_numbers_size {
-		ui32 num = s_numbers[i];
-		stdout.write(num);
-		stdout.write(" ");
-	}
-	stdout.writeln(" ");
-	stdout.writeln(lineLength);
 	loop i, 0..size {
 		ui8 byte = s_buffer[i];
 		if ((byte >= '0') & (byte <= '9')) | ((byte == '.') | (byte == '\n')) {
@@ -72,25 +65,7 @@ ui8 Part1(ui64 size) {
 				if (cardinality >= (s_offsets[j])) & (cardinality < (s_offsets[j] + s_lengths[j])) {
 					if s_not_addeds[j] {
 						ui32 num = s_numbers[j];
-						ui32 offset = s_offsets[j];
-						ui32 length = s_lengths[j];
-						stdout.write("k: ");
-						stdout.write(k);
-						stdout.write(" index: ");
-						stdout.write(cardinality);
-						stdout.write(" offset: ");
-						stdout.write(offset);
-						stdout.write(" length: ");
-						stdout.write(length);
-						stdout.write(" char: ");
-						stdout.write(byte);
-						stdout.write(" ");
-						stdout.write(sum);
-						stdout.write(" + ");
-						stdout.write(num);
-						stdout.write(" = ");
 						sum += s_numbers[j];
-						stdout.writeln(sum);
 						s_not_addeds[j] = false;
 						break;
 					}
@@ -100,11 +75,38 @@ ui8 Part1(ui64 size) {
 	}
 	stdout.write("Sum part 1: ");
 	stdout.writeln(sum);
-	return 0;
+	return lineLength;
 }
 
-ui8 Part2(ui64 size) {
-
+ui8 Part2(ui64 size, ui8 lineLen) {
+	// s_numbers is already filled from Part1
+	ui8 lineLength = lineLen;
+	ui64 sum = 0;
+	loop i, 0..size {
+		ui8 byte = s_buffer[i];
+		if byte != '*' {
+			skip;
+		}
+		ui16[2] parts = {0, 0};
+		ui8 partNum = 0;
+		// Current byte might be a gear
+		ui32[8] cardinalities = {(i - lineLength) - 1, i - lineLength, (i - lineLength) + 1, i - 1, i + 1, (i + lineLength) - 1, i + lineLength, (i + lineLength) + 1};
+		loop j, 0..s_numbers_size {
+			loop k, 0..8 {
+				ui32 cardinality = cardinalities[k];
+				if (cardinality >= (s_offsets[j])) & (cardinality < (s_offsets[j] + s_lengths[j])) {
+					parts[partNum] = s_numbers[j];
+					partNum += 1;
+					break;
+				}
+			}
+		}
+		if partNum == 2 {
+			sum += (parts[0] * parts[1]);
+		}
+	}
+	stdout.write("Sum part 2: ");
+	stdout.writeln(sum);
 	return 0;
 }
 
@@ -119,7 +121,7 @@ ui8 main(cstring[] argv) {
 		stdout.writeln("Could not read from file");
 		return -1;
 	}
-	Part1(size);
-	//Part2(size);
+	ui8 lineLength = Part1(size);
+	Part2(size, lineLength);
 	return 0;
 }
