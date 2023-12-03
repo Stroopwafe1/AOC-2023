@@ -7,7 +7,6 @@ section .data
 section .bss
 	s_buffer resb 19750
 	s_lengths resd 1224
-	s_not_addeds resb 1224
 	s_numbers resd 1224
 	s_offsets resd 1224
 
@@ -290,11 +289,6 @@ Part1:
 	movzx rax, byte [rbp-13]; printExpression variable buffLength
 	pop r11
 	mov dword [s_lengths+r11*4], eax; VAR_ASSIGNMENT ARRAY s_lengths
-	movzx rax, word [s_numbers_size]; printExpression global variable s_numbers_size
-	push rax
-	mov rax, 1
-	pop r11
-	mov byte [s_not_addeds+r11*1], al; VAR_ASSIGNMENT ARRAY s_not_addeds
 	movzx rax, word [s_numbers_size]; printExpression, left identifier, not rbp
 	mov rbx, 1; printExpression, right int
 	add ax, bx
@@ -482,14 +476,6 @@ Part1:
 	jnz .if8
 	jmp .end_if8
 .if8:
-	sub rsp, 12
-	mov rax, qword [rbp-72]; printExpression variable j
-	movzx r12, byte [s_not_addeds+rax*1]; printExpression array s_not_addeds
-	mov rax, r12
-	test rax, rax
-	jnz .if9
-	jmp .end_if9
-.if9:
 	sub rsp, 16
 	mov rax, qword [rbp-72]; printExpression variable j
 	mov r12d, dword [s_numbers+rax*4]; printExpression array s_numbers
@@ -501,16 +487,8 @@ Part1:
 	mov rax, qword [rbp-8]; printExpression, left identifier, rbp variable sum
 	add rax, rbx
 	mov qword [rbp-8], rax; VAR_ASSIGNMENT else variable sum
-	mov rax, qword [rbp-72]; printExpression variable j
-	push rax
-	mov rax, 0
-	pop r11
-	mov byte [s_not_addeds+r11*1], al; VAR_ASSIGNMENT ARRAY s_not_addeds
 	jmp .not_label4
 	add rsp, 16
-	jmp .end_if9
-.end_if9:
-	add rsp, 12
 	jmp .end_if8
 .end_if8:
 	add rsp, 16
@@ -616,12 +594,12 @@ Part2:
 	cmovne rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
-	jnz .if10
-	jmp .end_if10
-.if10:
+	jnz .if9
+	jmp .end_if9
+.if9:
 	jmp .skip_label5
-	jmp .end_if10
-.end_if10:
+	jmp .end_if9
+.end_if9:
 	mov rax, 0
 	mov word [rbp-23], ax; VAR_DECL_ASSIGN ARRAY variable parts[0]
 	mov rax, 0
@@ -728,9 +706,9 @@ Part2:
 	pop rax; printExpression, leftPrinted, recover left
 	and rax, rbx
 	test rax, rax
-	jnz .if11
-	jmp .end_if11
-.if11:
+	jnz .if10
+	jmp .end_if10
+.if10:
 	movzx rax, byte [rbp-24]; printExpression variable partNum
 	push rax
 	mov rax, qword [rbp-65]; printExpression variable j
@@ -743,8 +721,8 @@ Part2:
 	add al, bl
 	mov byte [rbp-24], al; VAR_ASSIGNMENT else variable partNum
 	jmp .not_label7
-	jmp .end_if11
-.end_if11:
+	jmp .end_if10
+.end_if10:
 	add rsp, 4
 .skip_label7:
 	mov al, byte [rbp-66]; LOOP k
@@ -767,9 +745,9 @@ Part2:
 	cmove rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
-	jnz .if12
-	jmp .end_if12
-.if12:
+	jnz .if11
+	jmp .end_if11
+.if11:
 	mov rax, 0
 	movzx r12, word [rbp-23+rax*2]; printExpression array parts
 	mov rax, r12
@@ -783,8 +761,8 @@ Part2:
 	mov rax, qword [rbp-9]; printExpression, left identifier, rbp variable sum
 	add rax, rbx
 	mov qword [rbp-9], rax; VAR_ASSIGNMENT else variable sum
-	jmp .end_if12
-.end_if12:
+	jmp .end_if11
+.end_if11:
 	add rsp, 42
 .skip_label5:
 	mov rax, qword [rbp-17]; LOOP i
@@ -882,9 +860,9 @@ _start:
 	cmovl rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
-	jnz .if13
-	jmp .end_if13
-.if13:
+	jnz .if12
+	jmp .end_if12
+.if12:
 	push rdi
 	push rsi
 	push rdx
@@ -909,8 +887,8 @@ _start:
 	mov rax, -1
 	add rsp, 16
 	jmp .exit
-	jmp .end_if13
-.end_if13:
+	jmp .end_if12
+.end_if12:
 	push rdi
 	push rsi
 	push rdx
@@ -942,9 +920,9 @@ _start:
 	cmove rcx, rdx
 	mov rax, rcx; printConditionalMove
 	test rax, rax
-	jnz .if14
-	jmp .end_if14
-.if14:
+	jnz .if13
+	jmp .end_if13
+.if13:
 	push rdi
 	push rsi
 	push rdx
@@ -969,8 +947,8 @@ _start:
 	mov rax, -1
 	add rsp, 16
 	jmp .exit
-	jmp .end_if14
-.end_if14:
+	jmp .end_if13
+.end_if13:
 	push rdi
 	push rsi
 	push rdx

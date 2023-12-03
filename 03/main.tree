@@ -3,7 +3,6 @@ ui8[19750] s_buffer;
 ui32[1224] s_numbers;
 ui32[1224] s_offsets;
 ui32[1224] s_lengths;
-bool[1224] s_not_addeds;
 
 ui16 s_numbers_size = 0;
 
@@ -45,7 +44,6 @@ ui8 Part1(ui64 size) {
 				s_numbers[s_numbers_size] = number;
 				s_offsets[s_numbers_size] = i - buffLength;
 				s_lengths[s_numbers_size] = buffLength;
-				s_not_addeds[s_numbers_size] = true;
 				s_numbers_size += 1;
 				numBuffer = {0, 0, 0};
 				buffLength = 0;
@@ -63,12 +61,9 @@ ui8 Part1(ui64 size) {
 			loop k, 0..8 {
 				ui32 cardinality = cardinalities[k];
 				if (cardinality >= (s_offsets[j])) & (cardinality < (s_offsets[j] + s_lengths[j])) {
-					if s_not_addeds[j] {
-						ui32 num = s_numbers[j];
-						sum += s_numbers[j];
-						s_not_addeds[j] = false;
-						break;
-					}
+					ui32 num = s_numbers[j];
+					sum += s_numbers[j];
+					break;
 				}
 			}
 		}
