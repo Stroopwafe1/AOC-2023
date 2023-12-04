@@ -1,11 +1,8 @@
 section .data
 	str0: db "Sum part 1: ",0
-	str1: db "Game ",0
-	str2: db ": ",0
-	str3: db " copies",0xA,0
-	str4: db "Sum part 2: ",0
-	str5: db "Could not open file",0xA,0
-	str6: db "Could not read from file",0xA,0
+	str1: db "Sum part 2: ",0
+	str2: db "Could not open file",0xA,0
+	str3: db "Could not read from file",0xA,0
 section .bss
 	s_buffer resb 24110
 	s_game_copies resd 206
@@ -331,11 +328,7 @@ Part1_and_2:
 	jl .inside_label3
 	jmp .not_label3
 .inside_label3:
-	sub rsp, 17
-	movzx rax, byte [rbp-17]; printExpression variable gameCount
-	mov r12d, dword [s_game_copies+rax*4]; printExpression array s_game_copies
-	mov rax, r12
-	mov dword [rbp-81], eax; VAR_DECL_ASSIGN else variable toAdd
+	sub rsp, 4
 	movzx rax, byte [rbp-17]; printExpression, left identifier, rbp variable gameCount
 	mov rbx, qword [rbp-77]; printExpression, right identifier, rbp variable k
 	add rax, rbx
@@ -343,14 +336,16 @@ Part1_and_2:
 	mov rbx, 1; printExpression, right int
 	pop rax; printExpression, leftPrinted, recover left
 	add rax, rbx
-	mov byte [rbp-82], al; VAR_DECL_ASSIGN else variable index
-	movzx rax, byte [rbp-82]; printExpression variable index
+	mov byte [rbp-78], al; VAR_DECL_ASSIGN else variable index
+	movzx rax, byte [rbp-78]; printExpression variable index
 	push rax
-	movzx rax, byte [rbp-82]; printExpression variable index
+	movzx rax, byte [rbp-78]; printExpression variable index
 	mov r12d, dword [s_game_copies+rax*4]; printExpression array s_game_copies
 	mov rax, r12
 	push rax; printExpression, leftPrinted, save left
-	mov ebx, dword [rbp-81]; printExpression, right identifier, rbp variable toAdd
+	movzx rax, byte [rbp-17]; printExpression variable gameCount
+	mov r12d, dword [s_game_copies+rax*4]; printExpression array s_game_copies
+	mov rbx, r12; printExpression, nodeType=1, array index
 	pop rax; printExpression, leftPrinted, recover left
 	add rax, rbx
 	pop r11
@@ -575,35 +570,6 @@ Part1_and_2:
 	mov r12d, dword [s_game_copies+rax*4]; printExpression array s_game_copies
 	mov rax, r12
 	mov dword [rbp-60], eax; VAR_DECL_ASSIGN else variable copies
-; =============== FUNC CALL + STRING ===============
-	mov rax, 1
-	mov rdi, 1
-	mov rsi, str1
-	mov rdx, 5
-	syscall
-; =============== END FUNC CALL + STRING ===============
-; =============== FUNC CALL + VARIABLE ===============
-	mov rdi, qword [rbp-56]; variable i
-	call print_ui64
-; =============== END FUNC CALL + VARIABLE ===============
-; =============== FUNC CALL + STRING ===============
-	mov rax, 1
-	mov rdi, 1
-	mov rsi, str2
-	mov rdx, 2
-	syscall
-; =============== END FUNC CALL + STRING ===============
-; =============== FUNC CALL + VARIABLE ===============
-	mov edi, dword [rbp-60]; variable copies
-	call print_ui64
-; =============== END FUNC CALL + VARIABLE ===============
-; =============== FUNC CALL + STRING ===============
-	mov rax, 1
-	mov rdi, 1
-	mov rsi, str3
-	mov rdx, 8
-	syscall
-; =============== END FUNC CALL + STRING ===============
 	mov rax, qword [rbp-16]; printExpression, left identifier, rbp variable sum
 	mov ebx, dword [rbp-60]; printExpression, right identifier, rbp variable copies
 	add rax, rbx
@@ -617,7 +583,7 @@ Part1_and_2:
 ; =============== FUNC CALL + STRING ===============
 	mov rax, 1
 	mov rdi, 1
-	mov rsi, str4
+	mov rsi, str1
 	mov rdx, 12
 	syscall
 ; =============== END FUNC CALL + STRING ===============
@@ -626,7 +592,7 @@ Part1_and_2:
 	call print_ui64_newline
 ; =============== END FUNC CALL + VARIABLE ===============
 	mov rax, 0
-	add rsp, 194
+	add rsp, 181
 	jmp .exit
 .exit:
 ; =============== EPILOGUE ===============
@@ -667,7 +633,7 @@ _start:
 ; =============== FUNC CALL + STRING ===============
 	mov rax, 1
 	mov rdi, 1
-	mov rsi, str5
+	mov rsi, str2
 	mov rdx, 20
 	syscall
 ; =============== END FUNC CALL + STRING ===============
@@ -699,7 +665,7 @@ _start:
 ; =============== FUNC CALL + STRING ===============
 	mov rax, 1
 	mov rdi, 1
-	mov rsi, str6
+	mov rsi, str3
 	mov rdx, 25
 	syscall
 ; =============== END FUNC CALL + STRING ===============
