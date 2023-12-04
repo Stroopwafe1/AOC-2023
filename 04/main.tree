@@ -1,8 +1,11 @@
 ui8[24110] s_buffer;
 
-ui8 Part1(ui64 size) {
+ui32[206] s_game_copies;
+
+ui8 Part1_and_2(ui64 size) {
 	ui64 length = size;
 	ui64 sum = 0;
+	ui8 gameCount = 0;
 
 	ui8[3] numBuffer = {0, 0, 0};
 	ui8 buffLength = 0;
@@ -37,13 +40,12 @@ ui8 Part1(ui64 size) {
 				}
 				if matches > 0 {
 					ui32 points = (1 << (matches - 1));
-					stdout.write("Game ");
-					stdout.write(currentGame);
-					stdout.write(": ");
-					stdout.write(points);
-					stdout.write(" points! Total is now ");
 					sum += points;
-					stdout.writeln(sum);
+					loop k, 0..matches {
+						ui32 toAdd = s_game_copies[gameCount];
+						ui8 index = (gameCount + k) + 1;
+						s_game_copies[index] = s_game_copies[index] + toAdd;
+					}
 				}
 				i += 4;
 				parseOurNumbers = false;
@@ -53,6 +55,7 @@ ui8 Part1(ui64 size) {
 				matches = 0;
 				numBuffer = {0, 0, 0};
 				buffLength = 0;
+				gameCount += 1;
 			} else if byte == '|' {
 				parseOurNumbers = true;
 			}
@@ -77,11 +80,18 @@ ui8 Part1(ui64 size) {
 	}
 	stdout.write("Sum part 1: ");
 	stdout.writeln(sum);
-	return 0;
-}
-
-ui8 Part2(ui64 size) {
-
+	sum = 0;
+	loop i, 0..gameCount {
+		ui32 copies = s_game_copies[i];
+		stdout.write("Game ");
+		stdout.write(i);
+		stdout.write(": ");
+		stdout.write(copies);
+		stdout.writeln(" copies");
+		sum += copies;
+	}
+	stdout.write("Sum part 2: ");
+	stdout.writeln(sum);
 	return 0;
 }
 
@@ -96,7 +106,10 @@ ui8 main(cstring[] argv) {
 		stdout.writeln("Could not read from file");
 		return -1;
 	}
-	Part1(size);
-	//Part2(size);
+	ui8 gameSize = 206;
+	loop i, 0..gameSize {
+		s_game_copies[i] = 1;
+	}
+	Part1_and_2(size);
 	return 0;
 }
