@@ -1,0 +1,253 @@
+ui8[6150] s_buffer;
+ui64[20] s_seeds;
+ui16 s_seed_count = 0;
+ui64[36] s_seeds_to_soil;
+ui16 s_seeds_to_soil_count = 0;
+ui64[63] s_soil_to_fertilizer;
+ui16 s_soil_to_fertilizer_count = 0;
+ui64[48] s_fertilizer_to_water;
+ui16 s_fertilizer_to_water_count = 0;
+ui64[135] s_water_to_light;
+ui16 s_water_to_light_count = 0;
+ui64[141] s_light_to_temperature;
+ui16 s_light_to_temperature_count = 0;
+ui64[69] s_temperature_to_humidity;
+ui16 s_temperature_to_humidity_count = 0;
+ui64[78] s_humidity_to_location;
+ui16 s_humidity_to_location_count = 0;
+
+ui64 GetSoil(ui64 seed) {
+	ui64 returnValue = seed;
+	loop i, 0..s_seeds_to_soil_count / 3 {
+		ui64 destination = s_seeds_to_soil[i * 3];
+		ui64 source = s_seeds_to_soil[(i * 3) + 1];
+		ui64 range = s_seeds_to_soil[(i * 3) + 2];
+		if (returnValue >= source) & (returnValue < (source + range)) {
+			ui64 offset = returnValue - source;
+			return destination + offset;
+		}
+	}
+	return returnValue;
+}
+
+ui64 GetFertilizer(ui64 soil) {
+	ui64 returnValue = soil;
+	loop i, 0..s_soil_to_fertilizer_count / 3 {
+		ui64 destination = s_soil_to_fertilizer[i * 3];
+		ui64 source = s_soil_to_fertilizer[(i * 3) + 1];
+		ui64 range = s_soil_to_fertilizer[(i * 3) + 2];
+		if (returnValue >= source) & (returnValue < (source + range)) {
+			ui64 offset = returnValue - source;
+			return destination + offset;
+		}
+	}
+	return returnValue;
+}
+
+ui64 GetWater(ui64 fert) {
+	ui64 returnValue = fert;
+	loop i, 0..s_fertilizer_to_water_count / 3 {
+		ui64 destination = s_fertilizer_to_water[i * 3];
+		ui64 source = s_fertilizer_to_water[(i * 3) + 1];
+		ui64 range = s_fertilizer_to_water[(i * 3) + 2];
+		if (returnValue >= source) & (returnValue < (source + range)) {
+			ui64 offset = returnValue - source;
+			return destination + offset;
+		}
+	}
+	return returnValue;
+}
+
+ui64 GetLight(ui64 water) {
+	ui64 returnValue = water;
+	loop i, 0..s_water_to_light_count / 3 {
+		ui64 destination = s_water_to_light[i * 3];
+		ui64 source = s_water_to_light[(i * 3) + 1];
+		ui64 range = s_water_to_light[(i * 3) + 2];
+		if (returnValue >= source) & (returnValue < (source + range)) {
+			ui64 offset = returnValue - source;
+			return destination + offset;
+		}
+	}
+	return returnValue;
+}
+
+ui64 GetTemp(ui64 light) {
+	ui64 returnValue = light;
+	loop i, 0..s_light_to_temperature_count / 3 {
+		ui64 destination = s_light_to_temperature[i * 3];
+		ui64 source = s_light_to_temperature[(i * 3) + 1];
+		ui64 range = s_light_to_temperature[(i * 3) + 2];
+		if (returnValue >= source) & (returnValue < (source + range)) {
+			ui64 offset = returnValue - source;
+			return destination + offset;
+		}
+	}
+	return returnValue;
+}
+
+ui64 GetHumidity(ui64 temp) {
+	ui64 returnValue = temp;
+	loop i, 0..s_temperature_to_humidity_count / 3 {
+		ui64 destination = s_temperature_to_humidity[i * 3];
+		ui64 source = s_temperature_to_humidity[(i * 3) + 1];
+		ui64 range = s_temperature_to_humidity[(i * 3) + 2];
+		if (returnValue >= source) & (returnValue < (source + range)) {
+			ui64 offset = returnValue - source;
+			return destination + offset;
+		}
+	}
+	return returnValue;
+}
+
+ui64 GetLocation(ui64 humidity) {
+	ui64 returnValue = humidity;
+	loop i, 0..s_humidity_to_location_count / 3 {
+		ui64 destination = s_humidity_to_location[i * 3];
+		ui64 source = s_humidity_to_location[(i * 3) + 1];
+		ui64 range = s_humidity_to_location[(i * 3) + 2];
+		if (returnValue >= source) & (returnValue < (source + range)) {
+			ui64 offset = returnValue - source;
+			return destination + offset;
+		}
+	}
+	return returnValue;
+}
+
+ui8 Part1(ui64 size) {
+	ui64 length = size;
+	// Parse all seeds
+	// Double check they're parsed correctly
+	// Parse maps destination, source, and range
+	// Get value for next map
+
+	// Every double newline means end of parsing map/seeds
+	// In the maps; every 3rd (0, 3, 6, 9, etc...) is the destination start
+	// every 3rd+1 (1, 4, 7, 10, etc...) is the source start
+	// every 3rd+2 (2, 5, 8, 11, etc...) is the range
+	ui8 parsingMapCount = 0;
+
+
+	loop i, 0..length {
+		ui8 byte = s_buffer[i];
+		ui8 nextByte = s_buffer[i + 1];
+		if (byte == '\n') & (nextByte == '\n') {
+			parsingMapCount += 1;
+		}
+		if (byte >= '0') & (byte <= '9') {
+			ui64 num = find_ui64_in_string((\s_buffer) + i);
+			ui8 numLength = 0;
+			loop j, 0..20 {
+				ui8 numByte = s_buffer[i + j];
+				if (numByte >= '0') & (numByte <= '9') {
+					numLength += 1;
+				} else {
+					break;
+				}
+			}
+			numLength -= 1;
+			i += numLength;
+			// Yes this else-if is ugly, but because they're not all the same length I couldn't merge them into a single array
+			if parsingMapCount == 0 {
+				s_seeds[s_seed_count] = num;
+				s_seed_count += 1;
+			} else if parsingMapCount == 1 {
+				s_seeds_to_soil[s_seeds_to_soil_count] = num;
+				s_seeds_to_soil_count += 1;
+			} else if parsingMapCount == 2 {
+				s_soil_to_fertilizer[s_soil_to_fertilizer_count] = num;
+				s_soil_to_fertilizer_count += 1;
+			} else if parsingMapCount == 3 {
+				s_fertilizer_to_water[s_fertilizer_to_water_count] = num;
+				s_fertilizer_to_water_count += 1;
+			} else if parsingMapCount == 4 {
+				s_water_to_light[s_water_to_light_count] = num;
+				s_water_to_light_count += 1;
+			} else if parsingMapCount == 5 {
+				s_light_to_temperature[s_light_to_temperature_count] = num;
+				s_light_to_temperature_count += 1;
+			} else if parsingMapCount == 6 {
+				s_temperature_to_humidity[s_temperature_to_humidity_count] = num;
+				s_temperature_to_humidity_count += 1;
+			} else if parsingMapCount == 7 {
+				s_humidity_to_location[s_humidity_to_location_count] = num;
+				s_humidity_to_location_count += 1;
+			}
+		}
+	}
+	ui64 lowestLocation = 12345678900000;
+	loop i, 0..s_seed_count {
+		ui64 seed = s_seeds[i];
+		stdout.write("Seed: ");
+		stdout.write(seed);
+		stdout.write(" is on soil ");
+		ui64 soil = GetSoil(seed);
+		stdout.write(soil);
+		stdout.write(" and has fertilizer ");
+		ui64 fert = GetFertilizer(soil);
+		stdout.write(fert);
+		stdout.write(", water ");
+		ui64 water = GetWater(fert);
+		stdout.write(water);
+		stdout.write(", light ");
+		ui64 light = GetLight(water);
+		stdout.write(light);
+		stdout.write(", temperature ");
+		ui64 temp = GetTemp(light);
+		stdout.write(temp);
+		stdout.write(", humidity ");
+		ui64 humidity = GetHumidity(temp);
+		stdout.write(humidity);
+		stdout.write(", location ");
+		ui64 location = GetLocation(humidity);
+		stdout.writeln(location);
+		if location < lowestLocation {
+			lowestLocation = location;
+		}
+	}
+	stdout.write("Lowest location part 1: ");
+	stdout.writeln(lowestLocation);
+	return 0;
+}
+
+ui8 Part2(ui64 size) {
+	// Part1 has already done the parsing for us
+	ui64 lowestLocation = 12345678900000;
+	loop j, 0..s_seed_count / 2 {
+		ui64 start = s_seeds[j * 2];
+		ui64 range = s_seeds[(j * 2) + 1];
+		loop i, start..start + range {
+			ui64 seed = i;
+			ui64 soil = GetSoil(seed);
+			ui64 fert = GetFertilizer(soil);
+			ui64 water = GetWater(fert);
+			ui64 light = GetLight(water);
+			ui64 temp = GetTemp(light);
+			ui64 humidity = GetHumidity(temp);
+			ui64 location = GetLocation(humidity);
+			if location < lowestLocation {
+				lowestLocation = location;
+			}
+		}
+	}
+
+	stdout.write("Lowest location part 2: ");
+	stdout.writeln(lowestLocation);
+	return 0;
+}
+
+ui8 main(cstring[] argv) {
+	i32 fd = SYS_OPEN(argv[1], 0, 0);
+	if (fd < 0) {
+		stdout.writeln("Could not open file");
+		return -1;
+	}
+	ui64 size = SYS_READ(fd, \s_buffer, 6145);
+	if (size == 0) {
+		stdout.writeln("Could not read from file");
+		return -1;
+	}
+	Part1(size);
+	Part2(size);
+	return 0;
+}
