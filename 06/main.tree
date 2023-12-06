@@ -1,0 +1,115 @@
+ui8[100] s_buffer;
+ui8[100] s_trimmed_buffer;
+ui64[4] s_times;
+ui8 s_times_count = 0;
+ui64[4] s_distances;
+ui8 s_distances_count = 0;
+
+ui64 GetOptions(ui64 time, ui64 distance) {
+	ui64 maxTime = time;
+	ui64 returnValue = 0;
+	loop i, 0..maxTime {
+		if (i * (maxTime - i)) > distance {
+			returnValue += 1;
+		}
+	}
+	return returnValue;
+}
+
+ui8 Part1(ui64 size) {
+	ui64 length = size;
+	bool parseDistances = false;
+	loop i, 0..length {
+		ui8 byte = s_buffer[i];
+		if byte == '\n' {
+			parseDistances = true;
+		} else if (byte >= '0') & (byte <= '9') {
+			ui64 num = find_ui64_in_string((\s_buffer) + i);
+			ui8 numLength = 0;
+			loop j, 0..20 {
+				ui8 numByte = s_buffer[i + j];
+				if (numByte >= '0') & (numByte <= '9') {
+					numLength += 1;
+				} else {
+					break;
+				}
+			}
+			numLength -= 1;
+			i += numLength;
+			if !parseDistances {
+				s_times[s_times_count] = num;
+				s_times_count += 1;
+			} else {
+				s_distances[s_distances_count] = num;
+				s_distances_count += 1;
+			}
+		}
+	}
+	ui64 optionsProduct = 1;
+	loop i, 0..s_times_count {
+		ui32 options = GetOptions(s_times[i], s_distances[i]);
+		optionsProduct *= options;
+	}
+	stdout.write("Number of ways to beat the record: ");
+	stdout.writeln(optionsProduct);
+	return 0;
+}
+
+ui8 Part2(ui64 size) {
+	ui64 trimmedCount = 0;
+	ui64 time = 0;
+	ui64 distance = 0;
+	loop i, 0..size {
+		ui8 byte = s_buffer[i];
+		if byte == ' ' {
+			skip;
+		}
+		s_trimmed_buffer[trimmedCount] = byte;
+		trimmedCount += 1;
+	}
+	bool parseDistances = false;
+	loop i, 0..trimmedCount {
+		ui8 byte = s_trimmed_buffer[i];
+		if byte == '\n' {
+			parseDistances = true;
+		} else if (byte >= '0') & (byte <= '9') {
+			ui64 num = find_ui64_in_string((\s_trimmed_buffer) + i);
+			ui8 numLength = 0;
+			loop j, 0..20 {
+				ui8 numByte = s_trimmed_buffer[i + j];
+				if (numByte >= '0') & (numByte <= '9') {
+					numLength += 1;
+				} else {
+					break;
+				}
+			}
+			numLength -= 1;
+			i += numLength;
+			if !parseDistances {
+				time = num;
+			} else {
+				distance = num;
+			}
+		}
+	}
+	ui64 options = GetOptions(time, distance);
+	stdout.write("Options part 2: ");
+	stdout.writeln(options);
+	return 0;
+}
+
+ui8 main(cstring[] argv) {
+	i32 fd = SYS_OPEN(argv[1], 0, 0);
+	if (fd < 0) {
+		stdout.writeln("Could not open file");
+		return -1;
+	}
+	ui64 size = SYS_READ(fd, \s_buffer, 74);
+	if (size == 0) {
+		stdout.writeln("Could not read from file");
+		return -1;
+	}
+	Part1(size);
+	Part2(size);
+	return 0;
+}
