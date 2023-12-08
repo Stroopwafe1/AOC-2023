@@ -1,0 +1,1001 @@
+55AAA 534	Type: Full house
+QKK3Q 408	Type: Two pair
+Q4Q4Q 607	Type: Full house
+5J5K5 793	Type: Three of a kind
+J6396 841	Type: One pair
+AK359 693	Type: High card
+4A6A2 453	Type: One pair
+A6632 967	Type: One pair
+Q2Q22 196	Type: Full house
+AK265 673	Type: High card
+K868K 514	Type: Two pair
+5T9K5 848	Type: One pair
+5QQQJ 223	Type: Three of a kind
+22JA2 337	Type: Three of a kind
+383J3 879	Type: Three of a kind
+J3232 416	Type: Two pair
+6983J 351	Type: High card
+QK6K9 229	Type: One pair
+98J25 852	Type: High card
+7733A 964	Type: Two pair
+89AK4 637	Type: High card
+K5A82 720	Type: High card
+A4664 230	Type: Two pair
+K4994 634	Type: Two pair
+T5888 314	Type: Three of a kind
+QQJAA 364	Type: Two pair
+77K78 296	Type: Three of a kind
+93322 159	Type: Two pair
+78777 462	Type: Four of a kind
+649J8 434	Type: High card
+692K7 709	Type: High card
+AJAAA 457	Type: Four of a kind
+838Q9 893	Type: One pair
+37K77 853	Type: Three of a kind
+8KKKK 473	Type: Four of a kind
+4555A 880	Type: Three of a kind
+2252J 645	Type: Three of a kind
+T2332 326	Type: Two pair
+TT4JT 75	Type: Three of a kind
+44847 949	Type: Three of a kind
+23733 470	Type: Three of a kind
+24766 419	Type: One pair
+2QKQK 302	Type: Two pair
+65A3Q 39	Type: High card
+7Q87J 297	Type: One pair
+6Q7KJ 519	Type: High card
+TTTTK 989	Type: Four of a kind
+T5936 463	Type: High card
+6J922 686	Type: One pair
+2TT5J 553	Type: One pair
+8975A 353	Type: High card
+787Q5 172	Type: One pair
+K7J77 840	Type: Three of a kind
+Q4QKJ 493	Type: One pair
+A5K83 723	Type: High card
+4JQ53 97	Type: High card
+KJKQK 582	Type: Three of a kind
+KK4KJ 17	Type: Three of a kind
+8768J 120	Type: One pair
+4444Q 905	Type: Four of a kind
+76776 842	Type: Full house
+KK9A2 439	Type: One pair
+J8QJ8 474	Type: Two pair
+8QQ88 718	Type: Full house
+QQJ55 139	Type: Two pair
+AK8TA 546	Type: One pair
+Q945T 478	Type: High card
+Q8K49 369	Type: High card
+43332 30	Type: Three of a kind
+694T7 940	Type: High card
+K4KKK 494	Type: Four of a kind
+84843 182	Type: Two pair
+AAAQA 646	Type: Four of a kind
+737JA 614	Type: One pair
+85QQ4 104	Type: One pair
+6JAA2 333	Type: One pair
+83388 565	Type: Full house
+T7999 826	Type: Three of a kind
+TQ96Q 947	Type: One pair
+83333 784	Type: Four of a kind
+T7T8K 689	Type: One pair
+4KQT6 491	Type: High card
+TT3TT 624	Type: Four of a kind
+88J66 836	Type: Two pair
+7AA77 13	Type: Full house
+2QJJ4 996	Type: One pair
+79777 273	Type: Four of a kind
+3333K 930	Type: Four of a kind
+2QQQ2 151	Type: Full house
+K2K4J 6	Type: One pair
+8338A 911	Type: Two pair
+8QTTT 891	Type: Three of a kind
+3QQ9Q 721	Type: Three of a kind
+555Q4 522	Type: Three of a kind
+6A79A 26	Type: One pair
+9J347 270	Type: High card
+8QJT6 483	Type: High card
+QQTTJ 91	Type: Two pair
+6Q396 617	Type: One pair
+58J36 244	Type: High card
+4K55K 630	Type: Two pair
+666J3 301	Type: Three of a kind
+5K555 204	Type: Four of a kind
+TJKTT 595	Type: Three of a kind
+66692 584	Type: Three of a kind
+66233 874	Type: Two pair
+A88AT 994	Type: Two pair
+45854 960	Type: Two pair
+77767 888	Type: Four of a kind
+TQTT3 854	Type: Three of a kind
+AJQ6A 259	Type: One pair
+9JAAA 149	Type: Three of a kind
+JKKQQ 479	Type: Two pair
+55598 576	Type: Three of a kind
+A28A2 925	Type: Two pair
+828KK 41	Type: Two pair
+Q3J93 203	Type: One pair
+AT3TT 827	Type: Three of a kind
+335KK 93	Type: Two pair
+5K56K 778	Type: Two pair
+4747Q 894	Type: Two pair
+A77K7 295	Type: Three of a kind
+2K634 154	Type: High card
+KJT5Q 480	Type: High card
+49854 445	Type: One pair
+T5TJT 342	Type: Three of a kind
+763AQ 981	Type: High card
+J6643 305	Type: One pair
+J76T3 787	Type: High card
+TJ7KJ 241	Type: One pair
+7J332 344	Type: One pair
+QA3T3 265	Type: One pair
+25222 366	Type: Four of a kind
+53552 877	Type: Three of a kind
+8Q696 111	Type: One pair
+Q9567 174	Type: High card
+774J9 184	Type: One pair
+79977 126	Type: Full house
+94T64 377	Type: One pair
+J8888 783	Type: Four of a kind
+33267 367	Type: One pair
+T5J53 768	Type: One pair
+246A7 141	Type: High card
+37QTQ 88	Type: One pair
+J99T2 64	Type: One pair
+4J792 220	Type: High card
+963A2 517	Type: High card
+43348 101	Type: Two pair
+Q8K57 832	Type: High card
+44744 197	Type: Four of a kind
+4J2J2 262	Type: Two pair
+K5KKT 892	Type: Three of a kind
+A53AA 348	Type: Three of a kind
+QT9T9 79	Type: Two pair
+54644 242	Type: Three of a kind
+39369 503	Type: Two pair
+78J87 427	Type: Two pair
+J99A4 663	Type: One pair
+KKK6K 569	Type: Four of a kind
+8JK88 896	Type: Three of a kind
+84648 42	Type: Two pair
+AJKAQ 687	Type: One pair
+5A94Q 636	Type: High card
+33T33 495	Type: Four of a kind
+9Q2T2 716	Type: One pair
+A749J 760	Type: High card
+4J8K4 65	Type: One pair
+99499 209	Type: Four of a kind
+42JA4 137	Type: One pair
+2K62K 228	Type: Two pair
+59Q28 482	Type: High card
+5AA73 188	Type: One pair
+QTTTA 293	Type: Three of a kind
+66642 953	Type: Three of a kind
+2KJ2K 564	Type: Two pair
+AAJAJ 532	Type: Full house
+A5453 51	Type: One pair
+44K24 797	Type: Three of a kind
+22992 320	Type: Full house
+66555 800	Type: Full house
+947JT 9	Type: High card
+A8265 313	Type: High card
+TA76Q 598	Type: High card
+8473A 810	Type: High card
+99Q95 845	Type: Three of a kind
+8Q85K 805	Type: One pair
+J3596 157	Type: High card
+JKK66 59	Type: Two pair
+TA888 794	Type: Three of a kind
+JA7A7 712	Type: Two pair
+9J59K 513	Type: One pair
+Q3Q33 600	Type: Full house
+3J448 310	Type: One pair
+QA44T 666	Type: One pair
+32K39 983	Type: One pair
+T2JQ8 133	Type: High card
+43345 939	Type: Two pair
+85Q45 436	Type: One pair
+8J898 424	Type: Three of a kind
+4QQJQ 49	Type: Three of a kind
+8KA9J 961	Type: High card
+55J59 507	Type: Three of a kind
+4724Q 504	Type: One pair
+4KQQQ 12	Type: Three of a kind
+33999 256	Type: Full house
+QA8A7 100	Type: One pair
+AAAAK 508	Type: Four of a kind
+59A55 368	Type: Three of a kind
+66J56 144	Type: Three of a kind
+487AA 736	Type: One pair
+KQTKK 186	Type: Three of a kind
+7QQQT 56	Type: Three of a kind
+7K246 767	Type: High card
+QQQQ9 487	Type: Four of a kind
+QQ3J2 398	Type: One pair
+J7K7A 798	Type: One pair
+22228 995	Type: Four of a kind
+64Q73 688	Type: High card
+J2TJ4 901	Type: One pair
+3636T 675	Type: Two pair
+55444 21	Type: Full house
+76QQA 4	Type: One pair
+A2232 922	Type: Three of a kind
+2AJ54 672	Type: High card
+JA37A 746	Type: One pair
+55T53 520	Type: Three of a kind
+QKK3J 906	Type: One pair
+K8466 119	Type: One pair
+AK653 758	Type: High card
+J3533 710	Type: Three of a kind
+AAAAT 391	Type: Four of a kind
+25KKJ 379	Type: One pair
+58T39 107	Type: High card
+9T9T9 871	Type: Full house
+AT7AQ 47	Type: One pair
+2QQ24 661	Type: Two pair
+96226 168	Type: Two pair
+65555 975	Type: Four of a kind
+88K88 443	Type: Four of a kind
+848J6 160	Type: One pair
+QQAQA 189	Type: Full house
+7J36K 875	Type: High card
+34484 770	Type: Three of a kind
+T4J38 383	Type: High card
+8942A 33	Type: High card
+AQA4Q 338	Type: Two pair
+9697T 977	Type: One pair
+K3K7J 887	Type: One pair
+T498T 472	Type: One pair
+KKQ2K 243	Type: Three of a kind
+KTJAK 872	Type: One pair
+57655 109	Type: Three of a kind
+QJQQQ 886	Type: Four of a kind
+57777 345	Type: Four of a kind
+66JQ6 623	Type: Three of a kind
+5992J 660	Type: One pair
+TAAKK 191	Type: Two pair
+27228 837	Type: Three of a kind
+79A26 604	Type: High card
+T8JTT 245	Type: Three of a kind
+T55TT 862	Type: Full house
+4558K 526	Type: One pair
+37777 627	Type: Four of a kind
+QQ3QQ 458	Type: Four of a kind
+KA9AT 124	Type: One pair
+88488 449	Type: Four of a kind
+4Q26K 796	Type: High card
+98984 393	Type: Two pair
+Q63J5 791	Type: High card
+8QKQQ 644	Type: Three of a kind
+A7AAK 371	Type: Three of a kind
+666JJ 924	Type: Full house
+A7974 913	Type: One pair
+TJA66 199	Type: One pair
+AA6KK 931	Type: Two pair
+77454 727	Type: Two pair
+9J697 954	Type: One pair
+444AA 294	Type: Full house
+AKA58 142	Type: One pair
+3K3J5 396	Type: One pair
+8T6KJ 456	Type: High card
+53735 706	Type: Two pair
+66444 817	Type: Full house
+3J784 698	Type: High card
+9A7AJ 570	Type: One pair
+J64AA 251	Type: One pair
+K5932 819	Type: High card
+958K2 485	Type: High card
+979J9 775	Type: Three of a kind
+77333 52	Type: Full house
+J622J 247	Type: Two pair
+TTJ6T 324	Type: Three of a kind
+6TT73 788	Type: One pair
+77477 2	Type: Four of a kind
+5K55K 652	Type: Full house
+KJ525 115	Type: One pair
+7AT56 594	Type: High card
+66766 869	Type: Four of a kind
+K9A2Q 602	Type: High card
+34434 180	Type: Full house
+77K72 388	Type: Three of a kind
+3K8T5 253	Type: High card
+4Q3KK 711	Type: One pair
+66665 632	Type: Four of a kind
+T2T66 690	Type: Two pair
+KKK74 616	Type: Three of a kind
+747J4 702	Type: Two pair
+796QA 497	Type: High card
+829K9 464	Type: One pair
+K78K5 628	Type: One pair
+34334 657	Type: Full house
+2T453 161	Type: High card
+8369Q 912	Type: High card
+99J99 57	Type: Four of a kind
+774K7 19	Type: Three of a kind
+4A94A 897	Type: Two pair
+2QAJ2 389	Type: One pair
+27K78 62	Type: One pair
+7KKKK 530	Type: Four of a kind
+KJKKK 319	Type: Four of a kind
+T76Q9 999	Type: High card
+2T998 361	Type: One pair
+A9Q29 855	Type: One pair
+J44J4 681	Type: Full house
+T57J9 813	Type: High card
+9459T 631	Type: One pair
+5J7J5 500	Type: Two pair
+9JT68 164	Type: High card
+6222J 78	Type: Three of a kind
+22662 166	Type: Full house
+J347A 280	Type: High card
+5TQA8 418	Type: High card
+AK7Q4 45	Type: High card
+36666 618	Type: Four of a kind
+AK545 32	Type: One pair
+KA9KQ 236	Type: One pair
+5T55K 649	Type: Three of a kind
+Q8A4J 68	Type: High card
+K4K44 117	Type: Full house
+T64TT 193	Type: Three of a kind
+46666 308	Type: Four of a kind
+K79KK 501	Type: Three of a kind
+777A8 615	Type: Three of a kind
+52TT2 306	Type: Two pair
+KKJKJ 486	Type: Full house
+Q3932 102	Type: One pair
+6J972 738	Type: High card
+55888 974	Type: Full house
+4J476 838	Type: One pair
+6JQ4Q 140	Type: One pair
+TTT4Q 303	Type: Three of a kind
+KKK88 701	Type: Full house
+35QKJ 69	Type: High card
+5J325 902	Type: One pair
+2J555 190	Type: Three of a kind
+55J55 572	Type: Four of a kind
+Q373T 311	Type: One pair
+KAJAA 422	Type: Three of a kind
+Q3QQ7 328	Type: Three of a kind
+463TQ 263	Type: High card
+JQ663 839	Type: One pair
+88858 428	Type: Four of a kind
+94853 475	Type: High card
+56Q55 821	Type: Three of a kind
+7777J 561	Type: Four of a kind
+Q66J7 726	Type: One pair
+9A7A5 700	Type: One pair
+98868 907	Type: Three of a kind
+A2AK2 288	Type: Two pair
+647A3 968	Type: High card
+K2988 903	Type: One pair
+AA2JT 890	Type: One pair
+A8T69 926	Type: High card
+T44TJ 252	Type: Two pair
+2A2AA 354	Type: Full house
+KK4J9 136	Type: One pair
+9889Q 620	Type: Two pair
+63J33 860	Type: Three of a kind
+222TT 667	Type: Full house
+22T72 238	Type: Three of a kind
+5T88T 691	Type: Two pair
+233TT 250	Type: Two pair
+96649 210	Type: Two pair
+58474 765	Type: One pair
+99939 668	Type: Four of a kind
+AT3AJ 959	Type: One pair
+999Q9 824	Type: Four of a kind
+9KJ99 550	Type: Three of a kind
+Q5J5K 551	Type: One pair
+TAT6T 235	Type: Three of a kind
+7J77J 406	Type: Full house
+68586 318	Type: Two pair
+AQ475 169	Type: High card
+J424T 705	Type: One pair
+AKK97 541	Type: One pair
+AKT75 412	Type: High card
+AAQJA 432	Type: Three of a kind
+K77K7 834	Type: Full house
+6Q594 535	Type: High card
+J2772 699	Type: Two pair
+85Q78 477	Type: One pair
+KT986 552	Type: High card
+6Q84J 980	Type: High card
+77T48 868	Type: One pair
+5AQAT 756	Type: One pair
+666T6 282	Type: Four of a kind
+97899 46	Type: Three of a kind
+QQ794 792	Type: One pair
+Q33KT 173	Type: One pair
+57JK4 948	Type: High card
+4K664 433	Type: Two pair
+Q36AT 195	Type: High card
+82282 287	Type: Full house
+44724 724	Type: Three of a kind
+K8637 547	Type: High card
+7377J 70	Type: Three of a kind
+79J7Q 3	Type: One pair
+TJ6KK 549	Type: One pair
+7766K 512	Type: Two pair
+J44K7 53	Type: One pair
+5Q425 211	Type: One pair
+AA5JA 878	Type: Three of a kind
+27A89 781	Type: High card
+99988 225	Type: Full house
+Q72T8 734	Type: High card
+Q454Q 105	Type: Two pair
+A8AT7 601	Type: One pair
+JTTTT 260	Type: Four of a kind
+Q9J78 407	Type: High card
+3K999 782	Type: Three of a kind
+AKK6K 917	Type: Three of a kind
+K3535 86	Type: Two pair
+22JT5 307	Type: One pair
+55855 332	Type: Four of a kind
+6KA98 187	Type: High card
+T2JQQ 215	Type: One pair
+4T39K 942	Type: High card
+QQ8QQ 329	Type: Four of a kind
+494J4 357	Type: Three of a kind
+46T27 829	Type: High card
+3548T 316	Type: High card
+555K6 224	Type: Three of a kind
+K9AQQ 833	Type: One pair
+TAT5T 340	Type: Three of a kind
+77888 671	Type: Full house
+22673 899	Type: One pair
+K3237 43	Type: One pair
+T9TT9 129	Type: Full house
+5555T 613	Type: Four of a kind
+98596 529	Type: One pair
+99669 921	Type: Full house
+4443A 825	Type: Three of a kind
+AQA54 806	Type: One pair
+TTA5A 163	Type: Two pair
+K99KK 946	Type: Full house
+93997 779	Type: Three of a kind
+49544 945	Type: Three of a kind
+QT383 350	Type: One pair
+67667 694	Type: Full house
+K7997 207	Type: Two pair
+TAT52 695	Type: One pair
+53563 346	Type: Two pair
+387QK 461	Type: High card
+J4T56 339	Type: High card
+TTTT7 330	Type: Four of a kind
+59QA7 401	Type: High card
+T5T55 861	Type: Full house
+27774 246	Type: Three of a kind
+TJ99T 505	Type: Two pair
+2ATAT 679	Type: Two pair
+64A43 420	Type: One pair
+28J5J 993	Type: One pair
+5J5K9 741	Type: One pair
+5QQQQ 446	Type: Four of a kind
+994Q9 73	Type: Three of a kind
+Q33A6 866	Type: One pair
+A337A 965	Type: Two pair
+55A88 669	Type: Two pair
+A82AQ 885	Type: One pair
+QJ6J8 331	Type: One pair
+AA72A 923	Type: Three of a kind
+K574Q 934	Type: High card
+33TKT 347	Type: Two pair
+Q6J73 384	Type: High card
+63782 970	Type: High card
+TT8TT 471	Type: Four of a kind
+2445K 984	Type: One pair
+5QT35 202	Type: One pair
+89888 662	Type: Four of a kind
+KA39A 611	Type: One pair
+3985A 548	Type: High card
+TTJ6K 234	Type: One pair
+A67J3 125	Type: High card
+9Q743 540	Type: High card
+5QAAQ 179	Type: Two pair
+K3K32 95	Type: Two pair
+83J5K 465	Type: High card
+782TA 883	Type: High card
+52QJ2 380	Type: One pair
+TTT6T 285	Type: Four of a kind
+K8469 198	Type: High card
+QT7AT 409	Type: One pair
+99995 143	Type: Four of a kind
+J5856 586	Type: One pair
+T9KJT 175	Type: One pair
+6Q42Q 966	Type: One pair
+JAQJ8 764	Type: One pair
+9939J 625	Type: Three of a kind
+55858 258	Type: Full house
+QQ828 356	Type: Two pair
+JQ2Q2 18	Type: Two pair
+27722 81	Type: Full house
+K3Q46 740	Type: High card
+46767 704	Type: Two pair
+J8KKK 284	Type: Three of a kind
+999K9 555	Type: Four of a kind
+J3J44 233	Type: Two pair
+K99K9 286	Type: Full house
+55994 910	Type: Two pair
+394JT 847	Type: High card
+22472 8	Type: Three of a kind
+95K5Q 882	Type: One pair
+4T454 859	Type: Three of a kind
+Q3333 521	Type: Four of a kind
+49495 717	Type: Two pair
+J5JJ5 112	Type: Full house
+3K827 421	Type: High card
+8Q799 876	Type: One pair
+6T7T9 735	Type: One pair
+TT8T2 402	Type: Three of a kind
+J77A7 774	Type: Three of a kind
+K68QK 40	Type: One pair
+KJK76 11	Type: One pair
+7AT7A 312	Type: Two pair
+9T999 90	Type: Four of a kind
+TKAQ5 928	Type: High card
+AQ27K 481	Type: High card
+K3477 545	Type: One pair
+QJTAA 375	Type: One pair
+44884 937	Type: Full house
+8822K 466	Type: Two pair
+23333 38	Type: Four of a kind
+4KKK4 773	Type: Full house
+46AJ4 130	Type: One pair
+2AA3A 648	Type: Three of a kind
+7K7A4 523	Type: One pair
+TT3A4 381	Type: One pair
+TT444 16	Type: Full house
+K8889 909	Type: Three of a kind
+64875 404	Type: High card
+84929 932	Type: One pair
+78485 566	Type: One pair
+32584 809	Type: High card
+83348 664	Type: Two pair
+9AAAK 237	Type: Three of a kind
+7AA7K 626	Type: Two pair
+JK2T2 559	Type: One pair
+96A7K 255	Type: High card
+75A65 745	Type: One pair
+68266 656	Type: Three of a kind
+KJK54 269	Type: One pair
+6QQ4Q 358	Type: Three of a kind
+787TT 276	Type: Two pair
+6AK66 484	Type: Three of a kind
+22262 278	Type: Four of a kind
+58J88 828	Type: Three of a kind
+QQAAA 987	Type: Full house
+2K67J 146	Type: High card
+7QQQA 459	Type: Three of a kind
+27453 415	Type: High card
+K842J 920	Type: High card
+5873T 914	Type: High card
+JJJJJ 155	Type: Five of a kind
+67JJ2 499	Type: One pair
+6T98T 927	Type: One pair
+T9KKK 82	Type: Three of a kind
+43956 823	Type: High card
+4464T 743	Type: Three of a kind
+98999 150	Type: Four of a kind
+95922 606	Type: Two pair
+K7KK7 183	Type: Full house
+937JA 728	Type: High card
+6688T 816	Type: Two pair
+Q3594 392	Type: High card
+6JJTT 766	Type: Two pair
+99JQ4 603	Type: One pair
+444QQ 642	Type: Full house
+KJ6KK 85	Type: Three of a kind
+QQK3J 15	Type: One pair
+A4KJ6 870	Type: High card
+76KA5 5	Type: High card
+66J66 957	Type: Four of a kind
+36663 153	Type: Full house
+55A5A 851	Type: Full house
+QQ5T7 176	Type: One pair
+A7999 873	Type: Three of a kind
+428JQ 973	Type: High card
+T7777 83	Type: Four of a kind
+8A452 991	Type: High card
+2699J 54	Type: One pair
+97959 218	Type: Three of a kind
+9559Q 221	Type: Two pair
+25794 200	Type: High card
+57555 560	Type: Four of a kind
+A5Q5A 413	Type: Two pair
+3JJ82 212	Type: One pair
+TK783 399	Type: High card
+T83TT 621	Type: Three of a kind
+55955 807	Type: Four of a kind
+5TT8K 410	Type: One pair
+4A7J5 633	Type: High card
+3K6TQ 373	Type: High card
+3TJTT 956	Type: Three of a kind
+KT5KT 639	Type: Two pair
+AT2TT 803	Type: Three of a kind
+K28A6 574	Type: High card
+87598 67	Type: One pair
+4KQQ9 327	Type: One pair
+8852Q 580	Type: One pair
+9K58K 732	Type: One pair
+8A8AA 437	Type: Full house
+A468K 647	Type: High card
+44743 943	Type: Three of a kind
+44423 605	Type: Three of a kind
+22863 343	Type: One pair
+666J2 213	Type: Three of a kind
+99922 692	Type: Full house
+728KK 84	Type: One pair
+23J77 752	Type: One pair
+7J49Q 426	Type: High card
+62Q2Q 469	Type: Two pair
+TKQ4J 205	Type: High card
+J5AA5 802	Type: Two pair
+A7359 447	Type: High card
+88666 864	Type: Full house
+KQT7T 976	Type: One pair
+A22A2 29	Type: Full house
+Q77KK 643	Type: Two pair
+87888 750	Type: Four of a kind
+T6663 992	Type: Three of a kind
+J2767 106	Type: One pair
+22J2J 579	Type: Full house
+66A66 588	Type: Four of a kind
+TT9TJ 14	Type: Three of a kind
+33A26 941	Type: One pair
+492A9 219	Type: One pair
+9JT44 323	Type: One pair
+QJK3J 670	Type: One pair
+74747 733	Type: Full house
+634K8 352	Type: High card
+8J68A 325	Type: One pair
+55Q5Q 808	Type: Full house
+44644 118	Type: Four of a kind
+3KK33 322	Type: Full house
+28QAJ 22	Type: High card
+T226K 780	Type: One pair
+Q33A5 298	Type: One pair
+98928 998	Type: Two pair
+7772J 544	Type: Three of a kind
+8A688 979	Type: Three of a kind
+J8J88 811	Type: Full house
+JKK3K 334	Type: Three of a kind
+AKA4J 448	Type: One pair
+6686K 568	Type: Three of a kind
+3K752 35	Type: High card
+7JT77 986	Type: Three of a kind
+938J5 511	Type: High card
+262A2 89	Type: Three of a kind
+AQ966 192	Type: One pair
+83338 858	Type: Full house
+6J7QQ 889	Type: One pair
+3KK77 655	Type: Two pair
+9524K 589	Type: High card
+3TJT3 349	Type: Two pair
+42Q67 577	Type: High card
+K249K 537	Type: One pair
+857Q3 997	Type: High card
+4QJQ4 37	Type: Two pair
+Q999J 96	Type: Three of a kind
+66262 321	Type: Full house
+A6A6A 460	Type: Full house
+5A539 908	Type: One pair
+34999 592	Type: Three of a kind
+22T9J 452	Type: One pair
+27A2A 1000	Type: Two pair
+4A2AJ 638	Type: One pair
+QQ76Q 730	Type: Three of a kind
+A6A33 867	Type: Two pair
+247QA 678	Type: High card
+72277 309	Type: Full house
+QTQQT 23	Type: Full house
+3K636 36	Type: Two pair
+99733 222	Type: Two pair
+677J4 581	Type: One pair
+J8JJJ 835	Type: Four of a kind
+KT6A4 116	Type: High card
+3JT33 275	Type: Three of a kind
+2Q978 596	Type: High card
+66969 685	Type: Full house
+K8A88 441	Type: Three of a kind
+3TKJ7 985	Type: High card
+78AA7 134	Type: Two pair
+KKTKT 158	Type: Full house
+575J7 58	Type: Two pair
+J2362 578	Type: One pair
+9JKK7 749	Type: One pair
+282A2 916	Type: Three of a kind
+4J424 390	Type: Three of a kind
+J7QQ7 865	Type: Two pair
+4A4T4 206	Type: Three of a kind
+55JKK 254	Type: Two pair
+33399 754	Type: Full house
+99QQQ 776	Type: Full house
+5Q76K 571	Type: High card
+37T2A 201	Type: High card
+6QT96 355	Type: One pair
+QQT4Q 267	Type: Three of a kind
+86A34 653	Type: High card
+76T59 92	Type: High card
+9QQ9K 430	Type: Two pair
+55995 516	Type: Full house
+22322 599	Type: Four of a kind
+2876K 822	Type: High card
+77233 831	Type: Two pair
+4T2T2 360	Type: Two pair
+T2777 988	Type: Three of a kind
+2222A 110	Type: Four of a kind
+KK6K6 385	Type: Full house
+44J4K 622	Type: Three of a kind
+A93A3 162	Type: Two pair
+64A75 658	Type: High card
+5JK88 846	Type: One pair
+357A2 747	Type: High card
+KK69J 814	Type: One pair
+K4A3J 7	Type: High card
+A4444 395	Type: Four of a kind
+33535 759	Type: Full house
+T8Q5Q 363	Type: One pair
+J48K3 216	Type: High card
+82JK5 900	Type: High card
+9A833 538	Type: One pair
+TAA6T 587	Type: Two pair
+Q453T 194	Type: High card
+5T5T9 629	Type: Two pair
+QQQAQ 299	Type: Four of a kind
+86T3J 820	Type: High card
+32465 659	Type: High card
+373Q8 729	Type: One pair
+A8AJA 227	Type: Three of a kind
+777J9 25	Type: Three of a kind
+9QJ9J 1	Type: Two pair
+8888A 898	Type: Four of a kind
+5898Q 543	Type: One pair
+98852 558	Type: One pair
+AA9AA 289	Type: Four of a kind
+TTT5T 147	Type: Four of a kind
+5AATA 476	Type: Three of a kind
+Q3A85 488	Type: High card
+6Q86Q 919	Type: Two pair
+63655 387	Type: Two pair
+24668 274	Type: One pair
+7JT42 856	Type: High card
+9993Q 751	Type: Three of a kind
+AAAA3 266	Type: Four of a kind
+666T5 71	Type: Three of a kind
+95777 972	Type: Three of a kind
+86Q22 239	Type: One pair
+2AAAQ 226	Type: Three of a kind
+33JJ3 515	Type: Full house
+AAA52 527	Type: Three of a kind
+33J33 113	Type: Four of a kind
+99A9A 771	Type: Full house
+62922 442	Type: Three of a kind
+37KQ4 772	Type: High card
+66AAQ 641	Type: Two pair
+T2KTT 703	Type: Three of a kind
+KAK3K 610	Type: Three of a kind
+TQTJT 411	Type: Three of a kind
+AAKAK 121	Type: Full house
+KQ97T 496	Type: High card
+4QQ5K 597	Type: One pair
+55QJ5 431	Type: Three of a kind
+44J44 257	Type: Four of a kind
+69956 933	Type: Two pair
+6T2A5 99	Type: High card
+J59J5 382	Type: Two pair
+6K8J6 264	Type: One pair
+JKKTK 573	Type: Three of a kind
+87447 714	Type: Two pair
+TAT2Q 94	Type: One pair
+477JK 138	Type: One pair
+QTTTT 696	Type: Four of a kind
+89988 978	Type: Full house
+23J7Q 556	Type: High card
+668K8 378	Type: Two pair
+J5444 372	Type: Three of a kind
+96997 533	Type: Three of a kind
+K887K 283	Type: Two pair
+KAKKK 170	Type: Four of a kind
+22TQ2 165	Type: Three of a kind
+7J2JT 400	Type: One pair
+KJ495 790	Type: High card
+777QQ 951	Type: Full house
+68J33 722	Type: One pair
+57577 963	Type: Full house
+35873 128	Type: One pair
+22JJA 952	Type: Two pair
+8338J 77	Type: Two pair
+78585 414	Type: Two pair
+QQAJ4 131	Type: One pair
+8848T 969	Type: Three of a kind
+AKAJT 50	Type: One pair
+J8Q88 468	Type: Three of a kind
+7TTT7 763	Type: Full house
+67267 122	Type: Two pair
+A22AT 27	Type: Two pair
+5AQT4 31	Type: High card
+28468 506	Type: One pair
+AAAA5 958	Type: Four of a kind
+55666 10	Type: Full house
+55252 66	Type: Full house
+272J2 114	Type: Three of a kind
+J2AAJ 849	Type: Two pair
+7A8JJ 248	Type: One pair
+J5557 277	Type: Three of a kind
+5954J 762	Type: One pair
+6K3KK 98	Type: Three of a kind
+98788 108	Type: Three of a kind
+66423 72	Type: One pair
+67636 489	Type: Three of a kind
+5A555 403	Type: Four of a kind
+T9524 261	Type: High card
+7T284 268	Type: High card
+55554 677	Type: Four of a kind
+JTAT8 61	Type: One pair
+K922K 936	Type: Two pair
+A6T6T 272	Type: Two pair
+74K2J 815	Type: High card
+9KQ45 181	Type: High card
+KK4T2 397	Type: One pair
+8JQ8Q 528	Type: Two pair
+53Q73 748	Type: One pair
+6Q5Q5 683	Type: Two pair
+K66TT 950	Type: Two pair
+AJJ8A 341	Type: Two pair
+8A228 524	Type: Two pair
+AQ4A3 804	Type: One pair
+9JJ99 904	Type: Full house
+35976 608	Type: High card
+33AAJ 609	Type: Two pair
+55J53 335	Type: Three of a kind
+59988 208	Type: Two pair
+222K2 799	Type: Four of a kind
+36J9Q 498	Type: High card
+K4654 177	Type: One pair
+25522 531	Type: Full house
+T737A 881	Type: One pair
+55K45 20	Type: Three of a kind
+A3383 24	Type: Three of a kind
+99595 593	Type: Full house
+J8K2K 455	Type: One pair
+4KQ9K 635	Type: One pair
+34A33 231	Type: Three of a kind
+53TQ7 362	Type: High card
+K9KKK 640	Type: Four of a kind
+7TTT4 249	Type: Three of a kind
+Q49J2 127	Type: High card
+T538J 590	Type: High card
+J2288 684	Type: Two pair
+92993 674	Type: Three of a kind
+2A6AA 214	Type: Three of a kind
+QKKKQ 785	Type: Full house
+87QTJ 370	Type: High card
+TKT3K 737	Type: Two pair
+JQQ75 502	Type: One pair
+K9AAJ 850	Type: One pair
+258K8 857	Type: One pair
+9K2JQ 76	Type: High card
+JJJ6Q 217	Type: Three of a kind
+QJ399 557	Type: One pair
+K2JTT 135	Type: One pair
+J2922 148	Type: Three of a kind
+QQQ7Q 317	Type: Four of a kind
+92T9T 405	Type: Two pair
+Q274T 962	Type: High card
+44J9J 509	Type: Two pair
+QTQQQ 232	Type: Four of a kind
+37737 757	Type: Full house
+88J83 938	Type: Three of a kind
+AJJ89 279	Type: One pair
+855K3 744	Type: One pair
+82928 28	Type: Two pair
+7427K 185	Type: One pair
+JTQK8 884	Type: High card
+33363 585	Type: Four of a kind
+67662 971	Type: Three of a kind
+22272 359	Type: Four of a kind
+44442 450	Type: Four of a kind
+TQ746 650	Type: High card
+58553 715	Type: Three of a kind
+J5558 830	Type: Three of a kind
+25625 315	Type: Two pair
+67KK8 583	Type: One pair
+6K768 304	Type: One pair
+Q9KQ2 417	Type: One pair
+8A485 429	Type: One pair
+K5KKK 518	Type: Four of a kind
+J3JJ3 510	Type: Full house
+45554 525	Type: Full house
+TT777 145	Type: Full house
+KK666 490	Type: Full house
+9AK97 492	Type: One pair
+Q76A4 818	Type: High card
+88382 34	Type: Three of a kind
+39545 423	Type: One pair
+3JT4K 376	Type: High card
+2Q722 789	Type: Three of a kind
+K9KAK 87	Type: Three of a kind
+84847 152	Type: Two pair
+A33J8 440	Type: One pair
+5K8J4 132	Type: High card
+54585 680	Type: Three of a kind
+K55KT 281	Type: Two pair
+95T8J 990	Type: High card
+66QQQ 44	Type: Full house
+6T734 707	Type: High card
+57JJ7 454	Type: Two pair
+Q6QK7 425	Type: One pair
+Q4852 575	Type: High card
+63266 731	Type: Three of a kind
+2KA9A 739	Type: One pair
+96924 394	Type: One pair
+J3T2Q 654	Type: High card
+T44TT 451	Type: Full house
+9992J 542	Type: Three of a kind
+46664 178	Type: Full house
+42442 944	Type: Full house
+QQQ6J 755	Type: Three of a kind
+JTQT2 271	Type: One pair
+59575 682	Type: Three of a kind
+Q86T8 708	Type: One pair
+82888 801	Type: Four of a kind
+9595J 300	Type: Two pair
+38832 48	Type: Two pair
+3332J 935	Type: Three of a kind
+Q7Q57 769	Type: Two pair
+K85T9 812	Type: High card
+3A994 665	Type: One pair
+44544 725	Type: Four of a kind
+7K878 591	Type: Two pair
+84K24 336	Type: One pair
+K885K 982	Type: Two pair
+3TA4A 742	Type: One pair
+4T7T7 915	Type: Two pair
+75JAT 895	Type: High card
+453AQ 786	Type: High card
+QQKQQ 713	Type: Four of a kind
+JJ6K4 386	Type: One pair
+7J766 290	Type: Two pair
+2T735 435	Type: High card
+227K7 753	Type: Two pair
+656Q6 240	Type: Three of a kind
+QQQQ2 929	Type: Four of a kind
+K566T 467	Type: One pair
+KAT6J 563	Type: High card
+A2888 156	Type: Three of a kind
+222J2 374	Type: Four of a kind
+6Q6Q4 567	Type: Two pair
+47474 438	Type: Full house
+95939 171	Type: Three of a kind
+3434J 843	Type: Two pair
+8AJ75 863	Type: High card
+9K62A 536	Type: High card
+6699J 123	Type: Two pair
+97979 651	Type: Full house
+43966 844	Type: One pair
+833Q4 697	Type: One pair
+3A4TQ 795	Type: High card
+ATTK4 719	Type: One pair
+7A992 777	Type: One pair
+J938K 562	Type: High card
+JQJQQ 539	Type: Full house
+J22AA 554	Type: Two pair
+KKKTK 619	Type: Four of a kind
+2T873 292	Type: High card
+QKKAK 103	Type: Three of a kind
+77A77 612	Type: Four of a kind
+T7Q4K 55	Type: High card
+A46AA 60	Type: Three of a kind
+72778 365	Type: Three of a kind
+QQQ45 74	Type: Three of a kind
+6K372 676	Type: High card
+3J522 80	Type: One pair
+AK5AJ 291	Type: One pair
+329K6 444	Type: High card
+55Q55 918	Type: Four of a kind
+64545 167	Type: Two pair
+82288 63	Type: Full house
+3993J 761	Type: Two pair
+622J8 955	Type: One pair
+	Type: Unreachable

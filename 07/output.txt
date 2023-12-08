@@ -1,0 +1,1001 @@
+246A7 141 High card
+247QA 678 High card
+25794 200 High card
+27453 415 High card
+27A89 781 High card
+2876K 822 High card
+2T453 161 High card
+2T735 435 High card
+2T873 292 High card
+2Q978 596 High card
+2K634 154 High card
+32465 659 High card
+32584 809 High card
+329K6 444 High card
+3548T 316 High card
+357A2 747 High card
+35976 608 High card
+37T2A 201 High card
+37KQ4 772 High card
+387QK 461 High card
+3985A 548 High card
+3K6TQ 373 High card
+3K752 35 High card
+3K827 421 High card
+3K8T5 253 High card
+3A4TQ 795 High card
+42Q67 577 High card
+43956 823 High card
+453AQ 786 High card
+463TQ 263 High card
+46T27 829 High card
+4T39K 942 High card
+4Q26K 796 High card
+4KQT6 491 High card
+53TQ7 362 High card
+5873T 914 High card
+58T39 107 High card
+59Q28 482 High card
+59QA7 401 High card
+5TQA8 418 High card
+5Q76K 571 High card
+5A94Q 636 High card
+5AQT4 31 High card
+634K8 352 High card
+63782 970 High card
+647A3 968 High card
+64875 404 High card
+64Q73 688 High card
+64A75 658 High card
+65A3Q 39 High card
+692K7 709 High card
+694T7 940 High card
+6T2A5 99 High card
+6T734 707 High card
+6Q594 535 High card
+6K372 676 High card
+6KA98 187 High card
+763AQ 981 High card
+76T59 92 High card
+76KA5 5 High card
+782TA 883 High card
+796QA 497 High card
+79A26 604 High card
+7T284 268 High card
+7K246 767 High card
+7AT56 594 High card
+8369Q 912 High card
+8473A 810 High card
+857Q3 997 High card
+86A34 653 High card
+8942A 33 High card
+8975A 353 High card
+89AK4 637 High card
+8A452 991 High card
+94853 475 High card
+9524K 589 High card
+958K2 485 High card
+963A2 517 High card
+96A7K 255 High card
+9Q743 540 High card
+9K62A 536 High card
+9KQ45 181 High card
+T5936 463 High card
+T76Q9 999 High card
+T7Q4K 55 High card
+T9524 261 High card
+TQ746 650 High card
+TK783 399 High card
+TKAQ5 928 High card
+TA76Q 598 High card
+Q274T 962 High card
+Q3594 392 High card
+Q36AT 195 High card
+Q3A85 488 High card
+Q453T 194 High card
+Q4852 575 High card
+Q72T8 734 High card
+Q76A4 818 High card
+Q8K49 369 High card
+Q8K57 832 High card
+Q945T 478 High card
+Q9567 174 High card
+K28A6 574 High card
+K3Q46 740 High card
+K574Q 934 High card
+K5932 819 High card
+K5A82 720 High card
+K8469 198 High card
+K85T9 812 High card
+K8637 547 High card
+K9A2Q 602 High card
+KT6A4 116 High card
+KT986 552 High card
+KQ97T 496 High card
+A468K 647 High card
+A5K83 723 High card
+A7359 447 High card
+A8265 313 High card
+A8T69 926 High card
+AQ27K 481 High card
+AQ475 169 High card
+AK265 673 High card
+AK359 693 High card
+AK653 758 High card
+AK7Q4 45 High card
+AKT75 412 High card
+J347A 280 One pair
+J3596 157 One pair
+J3T2Q 654 One pair
+J48K3 216 One pair
+J4T56 339 One pair
+J76T3 787 One pair
+J938K 562 One pair
+JTQK8 884 One pair
+23J7Q 556 One pair
+28QAJ 22 One pair
+2K67J 146 One pair
+2AJ54 672 One pair
+3J784 698 One pair
+3JT4K 376 One pair
+35QKJ 69 One pair
+36J9Q 498 One pair
+394JT 847 One pair
+3TKJ7 985 One pair
+4J792 220 One pair
+4JQ53 97 One pair
+428JQ 973 One pair
+4A7J5 633 One pair
+57JK4 948 One pair
+58J36 244 One pair
+5K8J4 132 One pair
+6J972 738 One pair
+649J8 434 One pair
+6983J 351 One pair
+6Q7KJ 519 One pair
+6Q84J 980 One pair
+7J36K 875 One pair
+7J49Q 426 One pair
+7JT42 856 One pair
+74K2J 815 One pair
+75JAT 895 One pair
+82JK5 900 One pair
+83J5K 465 One pair
+86T3J 820 One pair
+87QTJ 370 One pair
+8T6KJ 456 One pair
+8QJT6 483 One pair
+8KA9J 961 One pair
+8AJ75 863 One pair
+9J347 270 One pair
+9JT68 164 One pair
+937JA 728 One pair
+938J5 511 One pair
+947JT 9 One pair
+95T8J 990 One pair
+98J25 852 One pair
+9K2JQ 76 One pair
+T2JQ8 133 One pair
+T4J38 383 One pair
+T538J 590 One pair
+T57J9 813 One pair
+TKQ4J 205 One pair
+Q49J2 127 One pair
+Q6J73 384 One pair
+Q63J5 791 One pair
+Q8A4J 68 One pair
+Q9J78 407 One pair
+KJ495 790 One pair
+KJT5Q 480 One pair
+K4A3J 7 One pair
+K842J 920 One pair
+KAT6J 563 One pair
+A4KJ6 870 One pair
+A67J3 125 One pair
+A749J 760 One pair
+22673 899 Two pair
+227K7 753 Two pair
+22863 343 Two pair
+233TT 250 Two pair
+2445K 984 Two pair
+24668 274 Two pair
+24766 419 Two pair
+25625 315 Two pair
+258K8 857 Two pair
+27K78 62 Two pair
+27A2A 1000 Two pair
+28468 506 Two pair
+2T998 361 Two pair
+2QQ24 661 Two pair
+2QKQK 302 Two pair
+2K62K 228 Two pair
+2KA9A 739 Two pair
+2ATAT 679 Two pair
+32K39 983 Two pair
+33267 367 Two pair
+335KK 93 Two pair
+33TKT 347 Two pair
+33A26 941 Two pair
+35873 128 Two pair
+3636T 675 Two pair
+373Q8 729 Two pair
+37QTQ 88 Two pair
+38832 48 Two pair
+39369 503 Two pair
+39545 423 Two pair
+3TA4A 742 Two pair
+3K636 36 Two pair
+3KK77 655 Two pair
+3A994 665 Two pair
+43345 939 Two pair
+43348 101 Two pair
+43966 844 Two pair
+4558K 526 Two pair
+45854 960 Two pair
+46767 704 Two pair
+4724Q 504 Two pair
+4747Q 894 Two pair
+487AA 736 Two pair
+492A9 219 Two pair
+49495 717 Two pair
+49854 445 Two pair
+4T2T2 360 Two pair
+4T7T7 915 Two pair
+4Q3KK 711 Two pair
+4QQ5K 597 Two pair
+4K55K 630 Two pair
+4K664 433 Two pair
+4KQ9K 635 Two pair
+4KQQ9 327 Two pair
+4A6A2 453 Two pair
+4A94A 897 Two pair
+52TT2 306 Two pair
+53563 346 Two pair
+53735 706 Two pair
+53Q73 748 Two pair
+55994 910 Two pair
+55A88 669 Two pair
+58474 765 Two pair
+5898Q 543 Two pair
+59988 208 Two pair
+5T5T9 629 Two pair
+5T88T 691 Two pair
+5T9K5 848 Two pair
+5TT8K 410 Two pair
+5Q425 211 Two pair
+5QT35 202 Two pair
+5QAAQ 179 Two pair
+5K56K 778 Two pair
+5A539 908 Two pair
+5AQAT 756 Two pair
+5AA73 188 Two pair
+62Q2Q 469 Two pair
+63655 387 Two pair
+64545 167 Two pair
+64A43 420 Two pair
+66233 874 Two pair
+66423 72 Two pair
+6688T 816 Two pair
+668K8 378 Two pair
+66AAQ 641 Two pair
+67267 122 Two pair
+67KK8 583 Two pair
+68586 318 Two pair
+69956 933 Two pair
+6T7T9 735 Two pair
+6T98T 927 Two pair
+6TT73 788 Two pair
+6Q396 617 Two pair
+6Q42Q 966 Two pair
+6Q5Q5 683 Two pair
+6Q6Q4 567 Two pair
+6Q86Q 919 Two pair
+6QT96 355 Two pair
+6K768 304 Two pair
+6A79A 26 Two pair
+728KK 84 Two pair
+7427K 185 Two pair
+75A65 745 Two pair
+76QQA 4 Two pair
+77233 831 Two pair
+7733A 964 Two pair
+77454 727 Two pair
+7766K 512 Two pair
+77T48 868 Two pair
+78485 566 Two pair
+78585 414 Two pair
+787TT 276 Two pair
+787Q5 172 Two pair
+78AA7 134 Two pair
+7K7A4 523 Two pair
+7K878 591 Two pair
+7A992 777 Two pair
+7AT7A 312 Two pair
+7AA7K 626 Two pair
+828KK 41 Two pair
+82928 28 Two pair
+829K9 464 Two pair
+83348 664 Two pair
+8338A 911 Two pair
+833Q4 697 Two pair
+838Q9 893 Two pair
+84648 42 Two pair
+84843 182 Two pair
+84847 152 Two pair
+84929 932 Two pair
+84K24 336 Two pair
+855K3 744 Two pair
+85Q45 436 Two pair
+85Q78 477 Two pair
+85QQ4 104 Two pair
+86Q22 239 Two pair
+87447 714 Two pair
+87598 67 Two pair
+8822K 466 Two pair
+8852Q 580 Two pair
+8Q696 111 Two pair
+8Q799 876 Two pair
+8Q85K 805 Two pair
+8A228 524 Two pair
+8A485 429 Two pair
+92T9T 405 Two pair
+93322 159 Two pair
+9459T 631 Two pair
+94T64 377 Two pair
+9559Q 221 Two pair
+95922 606 Two pair
+95K5Q 882 Two pair
+96226 168 Two pair
+96649 210 Two pair
+96924 394 Two pair
+9697T 977 Two pair
+98596 529 Two pair
+98852 558 Two pair
+9889Q 620 Two pair
+98928 998 Two pair
+98984 393 Two pair
+99733 222 Two pair
+9Q2T2 716 Two pair
+9QQ9K 430 Two pair
+9K58K 732 Two pair
+9A7A5 700 Two pair
+9A833 538 Two pair
+9AK97 492 Two pair
+T226K 780 Two pair
+T2332 326 Two pair
+T2T66 690 Two pair
+T498T 472 Two pair
+T737A 881 Two pair
+T7T8K 689 Two pair
+T8Q5Q 363 Two pair
+TT3A4 381 Two pair
+TTA5A 163 Two pair
+TQ96Q 947 Two pair
+TKT3K 737 Two pair
+TAT2Q 94 Two pair
+TAT52 695 Two pair
+TAA6T 587 Two pair
+TAAKK 191 Two pair
+Q33KT 173 Two pair
+Q33A5 298 Two pair
+Q33A6 866 Two pair
+Q373T 311 Two pair
+Q3932 102 Two pair
+Q454Q 105 Two pair
+Q6QK7 425 Two pair
+Q77KK 643 Two pair
+Q7Q57 769 Two pair
+Q86T8 708 Two pair
+Q9KQ2 417 Two pair
+QT383 350 Two pair
+QT7AT 409 Two pair
+QT9T9 79 Two pair
+QQ5T7 176 Two pair
+QQ794 792 Two pair
+QQ828 356 Two pair
+QK6K9 229 Two pair
+QKK3Q 408 Two pair
+QA3T3 265 Two pair
+QA44T 666 Two pair
+QA8A7 100 Two pair
+K249K 537 Two pair
+K2988 903 Two pair
+K3237 43 Two pair
+K3477 545 Two pair
+K3535 86 Two pair
+K3K32 95 Two pair
+K4654 177 Two pair
+K4994 634 Two pair
+K55KT 281 Two pair
+K566T 467 Two pair
+K66TT 950 Two pair
+K68QK 40 Two pair
+K78K5 628 Two pair
+K7997 207 Two pair
+K8466 119 Two pair
+K868K 514 Two pair
+K885K 982 Two pair
+K887K 283 Two pair
+K922K 936 Two pair
+K9AQQ 833 Two pair
+KT5KT 639 Two pair
+KQT7T 976 Two pair
+KK4T2 397 Two pair
+KK9A2 439 Two pair
+KA39A 611 Two pair
+KA9KQ 236 Two pair
+KA9AT 124 Two pair
+A22AT 27 Two pair
+A28A2 925 Two pair
+A2AK2 288 Two pair
+A337A 965 Two pair
+A4664 230 Two pair
+A5453 51 Two pair
+A5Q5A 413 Two pair
+A6632 967 Two pair
+A6T6T 272 Two pair
+A6A33 867 Two pair
+A7974 913 Two pair
+A82AQ 885 Two pair
+A88AT 994 Two pair
+A8AT7 601 Two pair
+A93A3 162 Two pair
+A9Q29 855 Two pair
+AT7AQ 47 Two pair
+ATTK4 719 Two pair
+AQ4A3 804 Two pair
+AQ966 192 Two pair
+AQA4Q 338 Two pair
+AQA54 806 Two pair
+AK545 32 Two pair
+AK8TA 546 Two pair
+AKK97 541 Two pair
+AKA58 142 Two pair
+AA6KK 931 Two pair
+JJ6K4 386 Three of a kind
+J2TJ4 901 Three of a kind
+JAQJ8 764 Three of a kind
+22472 8 Three of a kind
+22T72 238 Three of a kind
+22TQ2 165 Three of a kind
+23733 470 Three of a kind
+262A2 89 Three of a kind
+27228 837 Three of a kind
+27774 246 Three of a kind
+28J5J 993 Three of a kind
+282A2 916 Three of a kind
+2QJJ4 996 Three of a kind
+2Q722 789 Three of a kind
+2A6AA 214 Three of a kind
+2AA3A 648 Three of a kind
+2AAAQ 226 Three of a kind
+3JJ82 212 Three of a kind
+34484 770 Three of a kind
+34999 592 Three of a kind
+34A33 231 Three of a kind
+37K77 853 Three of a kind
+3QQ9Q 721 Three of a kind
+3K999 782 Three of a kind
+43332 30 Three of a kind
+44423 605 Three of a kind
+4443A 825 Three of a kind
+4464T 743 Three of a kind
+44724 724 Three of a kind
+44743 943 Three of a kind
+44847 949 Three of a kind
+44K24 797 Three of a kind
+4555A 880 Three of a kind
+49544 945 Three of a kind
+4T454 859 Three of a kind
+4KQQQ 12 Three of a kind
+4A4T4 206 Three of a kind
+53552 877 Three of a kind
+54585 680 Three of a kind
+54644 242 Three of a kind
+55598 576 Three of a kind
+555Q4 522 Three of a kind
+555K6 224 Three of a kind
+55T53 520 Three of a kind
+55K45 20 Three of a kind
+56Q55 821 Three of a kind
+57655 109 Three of a kind
+58553 715 Three of a kind
+59575 682 Three of a kind
+59A55 368 Three of a kind
+5T55K 649 Three of a kind
+5AATA 476 Three of a kind
+62922 442 Three of a kind
+63266 731 Three of a kind
+656Q6 240 Three of a kind
+66642 953 Three of a kind
+66692 584 Three of a kind
+666T5 71 Three of a kind
+6686K 568 Three of a kind
+67JJ2 499 Three of a kind
+67636 489 Three of a kind
+67662 971 Three of a kind
+68266 656 Three of a kind
+6QQ4Q 358 Three of a kind
+6K3KK 98 Three of a kind
+6AK66 484 Three of a kind
+7J2JT 400 Three of a kind
+72778 365 Three of a kind
+774K7 19 Three of a kind
+777A8 615 Three of a kind
+77K72 388 Three of a kind
+77K78 296 Three of a kind
+7TTT4 249 Three of a kind
+7QQQT 56 Three of a kind
+7QQQA 459 Three of a kind
+7A8JJ 248 Three of a kind
+88382 34 Three of a kind
+8848T 969 Three of a kind
+8QTTT 891 Three of a kind
+8QKQQ 644 Three of a kind
+8A688 979 Three of a kind
+92993 674 Three of a kind
+93997 779 Three of a kind
+95777 972 Three of a kind
+95939 171 Three of a kind
+96997 533 Three of a kind
+97899 46 Three of a kind
+97959 218 Three of a kind
+98788 108 Three of a kind
+98868 907 Three of a kind
+994Q9 73 Three of a kind
+9993Q 751 Three of a kind
+99Q95 845 Three of a kind
+9AAAK 237 Three of a kind
+TJ7KJ 241 Three of a kind
+T2777 988 Three of a kind
+T2KTT 703 Three of a kind
+T5888 314 Three of a kind
+T64TT 193 Three of a kind
+T6663 992 Three of a kind
+T7999 826 Three of a kind
+T83TT 621 Three of a kind
+T9KKK 82 Three of a kind
+TT8T2 402 Three of a kind
+TTT4Q 303 Three of a kind
+TQTT3 854 Three of a kind
+TA888 794 Three of a kind
+TAT5T 340 Three of a kind
+TAT6T 235 Three of a kind
+QJ6J8 331 Three of a kind
+QJK3J 670 Three of a kind
+Q3QQ7 328 Three of a kind
+QTTTA 293 Three of a kind
+QQ76Q 730 Three of a kind
+QQT4Q 267 Three of a kind
+QQQ45 74 Three of a kind
+QKKAK 103 Three of a kind
+K5KKT 892 Three of a kind
+K79KK 501 Three of a kind
+K8889 909 Three of a kind
+K8A88 441 Three of a kind
+K9KAK 87 Three of a kind
+KQTKK 186 Three of a kind
+KKQ2K 243 Three of a kind
+KKK74 616 Three of a kind
+KAK3K 610 Three of a kind
+AJJ89 279 Three of a kind
+A2232 922 Three of a kind
+A2888 156 Three of a kind
+A3383 24 Three of a kind
+A46AA 60 Three of a kind
+A53AA 348 Three of a kind
+A77K7 295 Three of a kind
+A7999 873 Three of a kind
+A7AAK 371 Three of a kind
+AT2TT 803 Three of a kind
+AT3TT 827 Three of a kind
+AKK6K 917 Three of a kind
+AA72A 923 Three of a kind
+AAA52 527 Three of a kind
+J2288 684 Full house
+J22AA 554 Full house
+J2362 578 Full house
+J2767 106 Full house
+J2772 699 Full house
+J3232 416 Full house
+J424T 705 Full house
+J44K7 53 Full house
+J5856 586 Full house
+J5AA5 802 Full house
+J6396 841 Full house
+J64AA 251 Full house
+J6643 305 Full house
+J7QQ7 865 Full house
+J7K7A 798 Full house
+J8K2K 455 Full house
+J99T2 64 Full house
+J99A4 663 Full house
+JTQT2 271 Full house
+JTAT8 61 Full house
+JQ2Q2 18 Full house
+JQ663 839 Full house
+JQQ75 502 Full house
+JK2T2 559 Full house
+JKK66 59 Full house
+JKKQQ 479 Full house
+JA37A 746 Full house
+JA7A7 712 Full house
+22JT5 307 Full house
+222TT 667 Full house
+22662 166 Full house
+22992 320 Full house
+22T9J 452 Full house
+23J77 752 Full house
+25522 531 Full house
+25KKJ 379 Full house
+2699J 54 Full house
+27722 81 Full house
+2TT5J 553 Full house
+2QQQ2 151 Full house
+2QAJ2 389 Full house
+2KJ2K 564 Full house
+2A2AA 354 Full house
+3J448 310 Full house
+3J522 80 Full house
+33399 754 Full house
+33535 759 Full house
+33999 256 Full house
+33AAJ 609 Full house
+34334 657 Full house
+3434J 843 Full house
+34434 180 Full house
+36663 153 Full house
+37737 757 Full house
+3993J 761 Full house
+3TJT3 349 Full house
+3K3J5 396 Full house
+3KK33 322 Full house
+4J476 838 Full house
+4J8K4 65 Full house
+42JA4 137 Full house
+42442 944 Full house
+444QQ 642 Full house
+444AA 294 Full house
+44884 937 Full house
+45554 525 Full house
+46664 178 Full house
+46AJ4 130 Full house
+47474 438 Full house
+477JK 138 Full house
+4QJQ4 37 Full house
+4KKK4 773 Full house
+4A2AJ 638 Full house
+5J325 902 Full house
+5J5K9 741 Full house
+5JK88 846 Full house
+52QJ2 380 Full house
+55JKK 254 Full house
+55252 66 Full house
+55444 21 Full house
+55666 10 Full house
+55858 258 Full house
+55888 974 Full house
+55995 516 Full house
+55Q5Q 808 Full house
+55A5A 851 Full house
+55AAA 534 Full house
+575J7 58 Full house
+57577 963 Full house
+5954J 762 Full house
+5992J 660 Full house
+5K55K 652 Full house
+6J7QQ 889 Full house
+6J922 686 Full house
+6JQ4Q 140 Full house
+6JAA2 333 Full house
+622J8 955 Full house
+66262 321 Full house
+66444 817 Full house
+66555 800 Full house
+66969 685 Full house
+6699J 123 Full house
+66QQQ 44 Full house
+67667 694 Full house
+677J4 581 Full house
+68J33 722 Full house
+6K8J6 264 Full house
+7J332 344 Full house
+7J766 290 Full house
+72277 309 Full house
+737JA 614 Full house
+747J4 702 Full house
+74747 733 Full house
+76776 842 Full house
+77333 52 Full house
+774J9 184 Full house
+777QQ 951 Full house
+77888 671 Full house
+78J87 427 Full house
+79J7Q 3 Full house
+79977 126 Full house
+7TTT7 763 Full house
+7Q87J 297 Full house
+7AA77 13 Full house
+8J68A 325 Full house
+8JQ8Q 528 Full house
+82282 287 Full house
+82288 63 Full house
+83338 858 Full house
+8338J 77 Full house
+83388 565 Full house
+848J6 160 Full house
+8768J 120 Full house
+88J66 836 Full house
+88666 864 Full house
+89988 978 Full house
+8QQ88 718 Full house
+8A8AA 437 Full house
+9J59K 513 Full house
+9J697 954 Full house
+9JT44 323 Full house
+9JKK7 749 Full house
+9595J 300 Full house
+97979 651 Full house
+99JQ4 603 Full house
+99595 593 Full house
+99669 921 Full house
+99922 692 Full house
+99988 225 Full house
+99QQQ 776 Full house
+99A9A 771 Full house
+9T9T9 871 Full house
+9A7AJ 570 Full house
+TJ6KK 549 Full house
+TJ99T 505 Full house
+TJA66 199 Full house
+T2JQQ 215 Full house
+T44TJ 252 Full house
+T44TT 451 Full house
+T5J53 768 Full house
+T55TT 862 Full house
+T5T55 861 Full house
+T9TT9 129 Full house
+T9KJT 175 Full house
+TTJ6K 234 Full house
+TT444 16 Full house
+TT777 145 Full house
+QJ399 557 Full house
+QJTAA 375 Full house
+Q2Q22 196 Full house
+Q3J93 203 Full house
+Q3Q33 600 Full house
+Q4Q4Q 607 Full house
+Q4QKJ 493 Full house
+Q5J5K 551 Full house
+Q66J7 726 Full house
+QTQQT 23 Full house
+QQJ55 139 Full house
+QQJAA 364 Full house
+QQ3J2 398 Full house
+QQTTJ 91 Full house
+QQK3J 15 Full house
+QQAJ4 131 Full house
+QQAQA 189 Full house
+QQAAA 987 Full house
+QKK3J 906 Full house
+QKKKQ 785 Full house
+KJ525 115 Full house
+KJK54 269 Full house
+KJK76 11 Full house
+K2JTT 135 Full house
+K2K4J 6 Full house
+K3K7J 887 Full house
+K4K44 117 Full house
+K77K7 834 Full house
+K7KK7 183 Full house
+K99K9 286 Full house
+K99KK 946 Full house
+K9AAJ 850 Full house
+KTJAK 872 Full house
+KK4J9 136 Full house
+KK666 490 Full house
+KK69J 814 Full house
+KK6K6 385 Full house
+KKTKT 158 Full house
+KKK88 701 Full house
+AJQ6A 259 Full house
+AJKAQ 687 Full house
+A22A2 29 Full house
+A33J8 440 Full house
+A6A6A 460 Full house
+AT3AJ 959 Full house
+AK5AJ 291 Full house
+AKAJT 50 Full house
+AKA4J 448 Full house
+AA2JT 890 Full house
+AAKAK 121 Full house
+JJJ6Q 217 Four of a kind
+J2922 148 Four of a kind
+J2AAJ 849 Four of a kind
+J3J44 233 Four of a kind
+J3533 710 Four of a kind
+J5444 372 Four of a kind
+J5557 277 Four of a kind
+J5558 830 Four of a kind
+J59J5 382 Four of a kind
+J622J 247 Four of a kind
+J77A7 774 Four of a kind
+J8QJ8 474 Four of a kind
+J8Q88 468 Four of a kind
+J8KKK 284 Four of a kind
+JKK3K 334 Four of a kind
+JKKTK 573 Four of a kind
+2J555 190 Four of a kind
+22JJA 952 Four of a kind
+22JA2 337 Four of a kind
+22228 995 Four of a kind
+2222A 110 Four of a kind
+22262 278 Four of a kind
+22272 359 Four of a kind
+222K2 799 Four of a kind
+22322 599 Four of a kind
+2252J 645 Four of a kind
+23333 38 Four of a kind
+25222 366 Four of a kind
+272J2 114 Four of a kind
+3JT33 275 Four of a kind
+3332J 935 Four of a kind
+3333K 930 Four of a kind
+33363 585 Four of a kind
+33T33 495 Four of a kind
+36666 618 Four of a kind
+37777 627 Four of a kind
+383J3 879 Four of a kind
+3TJTT 956 Four of a kind
+4J2J2 262 Four of a kind
+4J424 390 Four of a kind
+44J4K 622 Four of a kind
+44J9J 509 Four of a kind
+44442 450 Four of a kind
+4444Q 905 Four of a kind
+44544 725 Four of a kind
+44644 118 Four of a kind
+44744 197 Four of a kind
+46666 308 Four of a kind
+494J4 357 Four of a kind
+4QQJQ 49 Four of a kind
+5J5K5 793 Four of a kind
+5J7J5 500 Four of a kind
+55J53 335 Four of a kind
+55J59 507 Four of a kind
+55554 677 Four of a kind
+5555T 613 Four of a kind
+55855 332 Four of a kind
+55955 807 Four of a kind
+55QJ5 431 Four of a kind
+55Q55 918 Four of a kind
+57JJ7 454 Four of a kind
+57555 560 Four of a kind
+57777 345 Four of a kind
+58J88 828 Four of a kind
+5QQQJ 223 Four of a kind
+5QQQQ 446 Four of a kind
+5K555 204 Four of a kind
+5A555 403 Four of a kind
+6JJTT 766 Four of a kind
+6222J 78 Four of a kind
+63J33 860 Four of a kind
+65555 975 Four of a kind
+66J56 144 Four of a kind
+66JQ6 623 Four of a kind
+666J2 213 Four of a kind
+666J3 301 Four of a kind
+66665 632 Four of a kind
+666T6 282 Four of a kind
+66766 869 Four of a kind
+66A66 588 Four of a kind
+7JT77 986 Four of a kind
+7377J 70 Four of a kind
+77477 2 Four of a kind
+777J9 25 Four of a kind
+7772J 544 Four of a kind
+77767 888 Four of a kind
+77A77 612 Four of a kind
+78777 462 Four of a kind
+79777 273 Four of a kind
+7KKKK 530 Four of a kind
+8J898 424 Four of a kind
+8JK88 896 Four of a kind
+82888 801 Four of a kind
+83333 784 Four of a kind
+87888 750 Four of a kind
+88J83 938 Four of a kind
+88488 449 Four of a kind
+88858 428 Four of a kind
+8888A 898 Four of a kind
+88K88 443 Four of a kind
+89888 662 Four of a kind
+8KKKK 473 Four of a kind
+9JAAA 149 Four of a kind
+979J9 775 Four of a kind
+98999 150 Four of a kind
+9939J 625 Four of a kind
+99499 209 Four of a kind
+9992J 542 Four of a kind
+99939 668 Four of a kind
+99995 143 Four of a kind
+999Q9 824 Four of a kind
+999K9 555 Four of a kind
+9T999 90 Four of a kind
+9QJ9J 1 Four of a kind
+9KJ99 550 Four of a kind
+TJKTT 595 Four of a kind
+T5TJT 342 Four of a kind
+T7777 83 Four of a kind
+T8JTT 245 Four of a kind
+TTJ6T 324 Four of a kind
+TT3TT 624 Four of a kind
+TT4JT 75 Four of a kind
+TT8TT 471 Four of a kind
+TT9TJ 14 Four of a kind
+TTT5T 147 Four of a kind
+TTT6T 285 Four of a kind
+TTTT7 330 Four of a kind
+TTTTK 989 Four of a kind
+TQTJT 411 Four of a kind
+Q3333 521 Four of a kind
+Q999J 96 Four of a kind
+QTTTT 696 Four of a kind
+QTQQQ 232 Four of a kind
+QQ3QQ 458 Four of a kind
+QQ8QQ 329 Four of a kind
+QQQ6J 755 Four of a kind
+QQQ7Q 317 Four of a kind
+QQQQ2 929 Four of a kind
+QQQQ9 487 Four of a kind
+QQQAQ 299 Four of a kind
+QQKQQ 713 Four of a kind
+KJ6KK 85 Four of a kind
+KJKQK 582 Four of a kind
+K4KKK 494 Four of a kind
+K5KKK 518 Four of a kind
+K7J77 840 Four of a kind
+K9KKK 640 Four of a kind
+KK4KJ 17 Four of a kind
+KKK6K 569 Four of a kind
+KKKTK 619 Four of a kind
+KAJAA 422 Four of a kind
+KAKKK 170 Four of a kind
+AJJ8A 341 Four of a kind
+A4444 395 Four of a kind
+A8AJA 227 Four of a kind
+AA5JA 878 Four of a kind
+AA9AA 289 Four of a kind
+AAQJA 432 Four of a kind
+AAAQA 646 Four of a kind
+AAAA3 266 Four of a kind
+AAAA5 958 Four of a kind
+AAAAT 391 Four of a kind
+AAAAK 508 Four of a kind
+JJJJJ 155 Five of a kind
+J3JJ3 510 Five of a kind
+J44J4 681 Five of a kind
+J5JJ5 112 Five of a kind
+J8JJJ 835 Five of a kind
+J8J88 811 Five of a kind
+J8888 783 Five of a kind
+JTTTT 260 Five of a kind
+JQJQQ 539 Five of a kind
+22J2J 579 Five of a kind
+222J2 374 Five of a kind
+33JJ3 515 Five of a kind
+33J33 113 Five of a kind
+44J44 257 Five of a kind
+55J55 572 Five of a kind
+66J66 957 Five of a kind
+666JJ 924 Five of a kind
+7J77J 406 Five of a kind
+7777J 561 Five of a kind
+9JJ99 904 Five of a kind
+99J99 57 Five of a kind
+QJQQQ 886 Five of a kind
+KJKKK 319 Five of a kind
+KKJKJ 486 Five of a kind
+AJAAA 457 Five of a kind
+AAJAJ 532 Five of a kind
+Total winnings part 2: 244822607

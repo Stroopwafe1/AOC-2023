@@ -1,0 +1,393 @@
+ui8[10000] s_buffer;
+
+ui8[5000] s_cards;
+ui16 s_cards_count = 0;
+ui16[1000] s_bids;
+ui16 s_bids_count = 0;
+ui8[1000] s_types;
+ui16 s_types_count = 0;
+
+/* types:
+1 => High card
+2 => One pair
+4 => Two pair
+8 => Three of a kind
+16 => Full house
+32 => Four of a kind
+64 => Five of a kind
+*/
+
+ui8 GetValue(ui8 c) {
+	ui8 byte = c;
+	if byte <= '9' {
+		return byte - '2';
+	} else {
+		if byte == 'T' {
+			return 8;
+		} else if byte == 'J' {
+			return 9;
+		} else if byte == 'Q' {
+			return 10;
+		} else if byte == 'K' {
+			return 11;
+		} else {
+			return 12;
+		}
+	}
+	return 255;
+}
+
+ui8 GetValueP2(ui8 c) {
+	ui8 byte = c;
+	if byte <= '9' {
+		return byte - '1';
+	} else {
+		if byte == 'T' {
+			return 9;
+		} else if byte == 'J' {
+			return 0;
+		} else if byte == 'Q' {
+			return 10;
+		} else if byte == 'K' {
+			return 11;
+		} else {
+			return 12;
+		}
+	}
+	return 255;
+}
+
+ui8 GetType(ui64 offset) {
+	ui8[13] cardArr = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+	loop i, 0..5 {
+		ui8 byte = s_buffer[offset + i];
+		if byte == 0 {
+			return 0;
+		}
+
+		if byte <= '9' {
+			ui8 index = byte - '2';
+			cardArr[index] = cardArr[index] + 1;
+		} else {
+			if byte == 'T' {
+				cardArr[8] = cardArr[8] + 1;
+			} else if byte == 'J' {
+				cardArr[9] = cardArr[9] + 1;
+			} else if byte == 'Q' {
+				cardArr[10] = cardArr[10] + 1;
+			} else if byte == 'K' {
+				cardArr[11] = cardArr[11] + 1;
+			} else {
+				cardArr[12] = cardArr[12] + 1;
+			}
+		}
+	}
+	/*
+	five of a kind is one index is 5
+	four of a kind is one index is 4
+	full house; one index is 3 and another is 2. If coming across a 1, it's a three of a kind
+	three of a kind; one index is 3 and the others are 1
+	two pair; 2 indices are 2
+	one pair; 1 index is 2
+	high card; all are 1
+	*/
+	ui8 highest = 0;
+	loop i, 0..13 {
+		if cardArr[i] == 5 {
+			return 64;
+		} else if cardArr[i] == 4 {
+			return 32;
+		} else if cardArr[i] == 3 {
+			if highest == 2 {
+				return 16;
+			} else if highest == 1 {
+				return 8;
+			} else {
+				highest = 3;
+			}
+		} else if cardArr[i] == 2 {
+			if highest == 3 {
+				return 16;
+			} else if highest == 2 {
+				return 4;
+			} else {
+				highest = 2;
+			}
+		} else if cardArr[i] == 1 {
+			if highest == 3 {
+				return 8;
+			} else if highest == 0 {
+				highest = 1;
+			}
+		}
+	}
+	if highest == 2 {
+		return 2;
+	}
+	return 1;
+}
+
+ui8 GetTypeP2(ui64 offset) {
+	ui8[13] cardArr = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+	loop i, 0..5 {
+		ui8 byte = s_buffer[offset + i];
+		if byte == 0 {
+			return 0;
+		}
+
+		if byte <= '9' {
+			ui8 index = byte - '2';
+			cardArr[index] = cardArr[index] + 1;
+		} else {
+			if byte == 'T' {
+				cardArr[8] = cardArr[8] + 1;
+			} else if byte == 'J' {
+				cardArr[9] = cardArr[9] + 1;
+			} else if byte == 'Q' {
+				cardArr[10] = cardArr[10] + 1;
+			} else if byte == 'K' {
+				cardArr[11] = cardArr[11] + 1;
+			} else {
+				cardArr[12] = cardArr[12] + 1;
+			}
+		}
+	}
+
+	ui8 highest = 0;
+	bool foundTwo = false;
+	loop i, 0..13 {
+		if i == 9 {
+			skip; // Ignore 'J' cards
+		}
+		if cardArr[i] == 5 {
+			return 64;
+		} else if cardArr[i] > highest {
+			if highest == 2 {
+				foundTwo = true;
+			}
+			highest = cardArr[i];
+		} else if cardArr[i] == 2 {
+			foundTwo = true;
+		}
+	}
+	if (highest + cardArr[9]) == 5 {
+		return 64;
+	} else if (highest + cardArr[9]) == 4 {
+		return 32;
+	} else if (highest + cardArr[9]) == 3 {
+		if foundTwo {
+			return 16;
+		} else {
+			return 8;
+		}
+	} else if (highest + cardArr[9]) == 2 {
+		if foundTwo {
+			return 4;
+		} else {
+			return 2;
+		}
+	}
+	return 1;
+}
+
+void PrintType(ui8 type) {
+	ui8 t = type;
+	stdout.write(" ");
+	if t == 1 {
+		stdout.writeln("High card");
+	} else if t == 2 {
+		stdout.writeln("One pair");
+	} else if t == 4 {
+		stdout.writeln("Two pair");
+	} else if t == 8 {
+		stdout.writeln("Three of a kind");
+	} else if t == 16 {
+		stdout.writeln("Full house");
+	} else if t == 32 {
+		stdout.writeln("Four of a kind");
+	} else if t == 64 {
+		stdout.writeln("Five of a kind");
+	} else {
+		stdout.writeln("Unreachable");
+	}
+}
+
+void Sort(bool part1) {
+	bool p1 = part1;
+	loop i, 0..s_bids_count {
+		bool swapped = false;
+		loop j, 0..(s_bids_count - i) - 1 {
+
+			ui8 typeA = s_types[j];
+			ui8 typeB = s_types[j + 1];
+			if typeA > typeB {
+				// swap j and j+1
+				loop k, 0..5 {
+					ui8 toSwap = s_cards[((j + 1) * 5) + k];
+					s_cards[((j + 1) * 5) + k] = s_cards[(j * 5) + k];
+					s_cards[(j * 5) + k] = toSwap;
+				}
+				s_types[j] = typeB;
+				s_types[j + 1] = typeA;
+				ui64 toSwap = s_bids[j];
+				s_bids[j] = s_bids[j + 1];
+				s_bids[j + 1] = toSwap;
+				swapped = true;
+			} else if typeA == typeB {
+				bool aIsGreater = false;
+				loop k, 0..5 {
+					ui8 a = s_cards[(j * 5) + k];
+					ui8 b = s_cards[((j + 1) * 5) + k];
+					ui16 aVal = 0;
+					ui16 bVal = 0;
+					if p1 {
+						aVal = GetValue(a);
+						bVal = GetValue(b);
+					} else {
+						aVal = GetValueP2(a);
+						bVal = GetValueP2(b);
+					}
+					if aVal < bVal {
+						break;
+					}
+					if aVal > bVal {
+						aIsGreater = true;
+						break;
+					}
+				}
+				if aIsGreater {
+					// swap i and j
+					loop k, 0..5 {
+						ui8 toSwap = s_cards[((j + 1) * 5) + k];
+						s_cards[((j + 1) * 5) + k] = s_cards[(j * 5) + k];
+						s_cards[(j * 5) + k] = toSwap;
+					}
+					s_types[j] = typeB;
+					s_types[j + 1] = typeA;
+					ui64 toSwap = s_bids[j];
+					s_bids[j] = s_bids[j + 1];
+					s_bids[j + 1] = toSwap;
+					swapped = true;
+				}
+			}
+		}
+		if !swapped {
+			break;
+		}
+	}
+}
+
+ui8 Part1(ui64 size) {
+	ui64 sum = 0;
+	ui64 length = size;
+	bool parseCard = true;
+
+	loop i, 0..length {
+		ui8 byte = s_buffer[i];
+		if byte == ' ' {
+			parseCard = false;
+			ui8 type = GetType(i - 5);
+			s_types[s_types_count] = type;
+			s_types_count += 1;
+		} else if parseCard {
+			s_cards[s_cards_count] = byte;
+			s_cards_count += 1;
+		} else if byte == '\n' {
+			parseCard = true;
+		} else if (byte >= '0') & (byte <= '9') {
+			ui16 num = find_ui64_in_string((\s_buffer) + i);
+			ui8 numLength = 0;
+			loop j, 0..20 {
+				ui8 numByte = s_buffer[i + j];
+				if (numByte >= '0') & (numByte <= '9') {
+					numLength += 1;
+				} else {
+					break;
+				}
+			}
+			numLength -= 1;
+			i += numLength;
+			s_bids[s_bids_count] = num;
+			s_bids_count += 1;
+		}
+	}
+	Sort(true);
+	loop i, 0..s_bids_count {
+		ui64 bid = s_bids[i];
+		sum += ((i + 1) * bid);
+	}
+	stdout.write("Total winnings part 1: ");
+	stdout.writeln(sum);
+	return 0;
+}
+
+ui8 Part2(ui64 size) {
+	ui64 sum = 0;
+	ui64 length = size;
+	bool parseCard = true;
+
+	loop i, 0..length {
+		ui8 byte = s_buffer[i];
+		if byte == ' ' {
+			parseCard = false;
+			ui8 type = GetTypeP2(i - 5);
+			s_types[s_types_count] = type;
+			s_types_count += 1;
+		} else if parseCard {
+			s_cards[s_cards_count] = byte;
+			s_cards_count += 1;
+		} else if byte == '\n' {
+			parseCard = true;
+		} else if (byte >= '0') & (byte <= '9') {
+			ui16 num = find_ui64_in_string((\s_buffer) + i);
+			ui8 numLength = 0;
+			loop j, 0..20 {
+				ui8 numByte = s_buffer[i + j];
+				if (numByte >= '0') & (numByte <= '9') {
+					numLength += 1;
+				} else {
+					break;
+				}
+			}
+			numLength -= 1;
+			i += numLength;
+			s_bids[s_bids_count] = num;
+			s_bids_count += 1;
+		}
+	}
+	Sort(false);
+	loop i, 0..s_bids_count {
+		//stdout.write("Hand: ");
+		loop j, 0..5 {
+			ui8 byte = s_cards[(i * 5) + j];
+			stdout.write(byte);
+		}
+		stdout.write(" ");
+		ui64 bid = s_bids[i];
+		stdout.write(bid);
+		ui8 type = s_types[i];
+		PrintType(type);
+		sum += ((i + 1) * bid);
+	}
+	stdout.write("Total winnings part 2: ");
+	stdout.writeln(sum);
+	return 0;
+}
+
+ui8 main(cstring[] argv) {
+	i32 fd = SYS_OPEN(argv[1], 0, 0);
+	if (fd < 0) {
+		stdout.writeln("Could not open file");
+		return -1;
+	}
+	ui64 size = SYS_READ(fd, \s_buffer, 10000);
+	if (size == 0) {
+		stdout.writeln("Could not read from file");
+		return -1;
+	}
+	//Part1(size);
+	Part2(size);
+	return 0;
+}

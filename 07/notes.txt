@@ -1,0 +1,5 @@
+How to complete this?
+
+- Make array for all cards (1000 * 5), all bids, all types, indices of the cards?
+- Implement struct arrays into my language
+- ????
