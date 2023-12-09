@@ -20,7 +20,28 @@ ui32 Hash(ref<ui8> buff, ui8 type) {
 	return h;
 }
 
-ui8 Part1(ui64 size) {
+ui64 GCD(ui64 a, ui64 b) {
+	ui64 A = a;
+	ui64 B = b;
+    loop {
+        ui64 t = B;
+        B = A % B;
+        A = t;
+        if B == 0 {
+			break;
+        }
+    }
+    return A;
+}
+
+ui64 LCM(ui64 a, ui64 b) {
+	ui64 A = a;
+	ui64 B = b;
+    ui64 c = A * B;
+    return c / GCD(A, B);
+}
+
+ref<ui32> Part1(ui64 size) {
 	bool parseInstructions = true;
 	ui64 instructionSize = 0;
 	ui64 length = size;
@@ -85,14 +106,80 @@ ui8 Part1(ui64 size) {
 		currHash = Hash((\s_buffer) + offset, instruction == 'R');
 		steps += 1;
 	}
-	stdout.write("Number of steps: ");
+	stdout.write("Number of steps part 1: ");
 	stdout.writeln(steps);
-	dealloc(hashBuffer, 4 * 2147483647);
-	return 0;
+	return hashBuffer;
 }
 
-ui8 Part2(ui64 size) {
+ui8 Part2(ui64 size, ref<ui32> hashBuff) {
+	ui64 length = size;
+	ref<ui32> hashBuffer = hashBuff;
+	ui64 instructionSize = 0;
+	bool parseInstructions = true;
+	ui64[6] sources = {0, 0, 0, 0, 0, 0};
+	ui16 sourcesCount = 0;
+	ui64[6] destinations = {0, 0, 0, 0, 0, 0};
+	ui16 destinationsCount = 0;
 
+	loop i, 0..length {
+		ui8 byte = s_buffer[i];
+		if byte == '\n' {
+			if parseInstructions {
+				parseInstructions = false;
+				i += 1;
+			} else {
+				if s_buffer[i - 14] == 'A' {
+					sources[sourcesCount] = i - 16;
+					sourcesCount += 1;
+				} else if s_buffer[i - 2] == 'Z' {
+					destinations[destinationsCount] = i - 4;
+					destinationsCount += 1;
+				} else if s_buffer[i - 7] == 'Z' {
+					destinations[destinationsCount] = i - 9;
+					destinationsCount += 1;
+				}
+			}
+		} else {
+			if parseInstructions {
+				instructionSize += 1;
+			}
+		}
+	}
+
+	ui64[6] steps = {0, 0, 0, 0, 0, 0};
+	ui8 stepCount = 0;
+	loop s, 0..sourcesCount {
+		ui64 step = 0;
+		ui8 instruction = s_buffer[step % instructionSize];
+		ui32 currentHash = Hash((\s_buffer) + sources[s], instruction == 'R');
+		step += 1;
+		loop {
+			ui32 offset = hashBuffer[currentHash];
+			bool found = false;
+			loop j, 0..destinationsCount {
+				if offset == destinations[j] {
+					found = true;
+				}
+			}
+			if found {
+				break;
+			}
+			instruction = s_buffer[step % (instructionSize)];
+			currentHash = Hash((\s_buffer) + offset, instruction == 'R');
+			step += 1;
+		}
+		steps[stepCount] = step;
+		stepCount += 1;
+	}
+	ui64 lcm = steps[0];
+	loop i, 1..stepCount {
+		ui64 step = steps[i];
+		lcm = LCM(lcm, step);
+	}
+	stdout.write("Number of steps part 2: ");
+	stdout.writeln(lcm);
+
+	dealloc(hashBuffer, 4 * 2147483647);
 	return 0;
 }
 
@@ -107,7 +194,7 @@ ui8 main(cstring[] argv) {
 		stdout.writeln("Could not read from file");
 		return -1;
 	}
-	Part1(size);
-	//Part2(size);
+	ref<ui32> buffer = Part1(size);
+	Part2(size, buffer);
 	return 0;
 }
