@@ -1,0 +1,113 @@
+ui8[13650] s_buffer;
+
+/**
+* Simple hash function
+* Type determines if left, right, or bare (0, 1, 2) respectively
+*/
+ui32 Hash(ref<ui8> buff, ui8 type) {
+	ui32 h = 5381;
+	ref<ui8> buf = buff;
+	ui8 t = type;
+	loop i, 0..3 {
+		ui8 byte = buf[i];
+		h = ((h << 5) + h) + byte;
+	}
+	if t == 0 {
+		h = ((h << 5) + h) + 'L';
+	} else if t == 1 {
+		h = ((h << 5) + h) + 'R';
+	}
+	return h;
+}
+
+ui8 Part1(ui64 size) {
+	bool parseInstructions = true;
+	ui64 instructionSize = 0;
+	ui64 length = size;
+	ui8[3] source = {'A', 'A', 'A'};
+	ui64 destOffset = 0;
+	ref<ui32> hashBuffer = alloc(4 * 2147483647);
+
+	loop i, 0..length {
+		ui8 byte = s_buffer[i];
+		if byte == '\n' {
+			if parseInstructions {
+				parseInstructions = false;
+				i += 1;
+			} else {
+				ui32 leftIndexHash = Hash(((\s_buffer) + i) - 16, 0);
+				ui32 rightIndexHash = Hash(((\s_buffer) + i) - 16, 1);
+				if (hashBuffer[leftIndexHash] != 0) {
+					stdout.writeln("Hash collission!!");
+					SYS_WRITE(1, ((\s_buffer) + i) - 16, 3);
+					stdout.write("L with ");
+					SYS_WRITE(1, (\s_buffer) + hashBuffer[leftIndexHash], 3);
+					stdout.writeln(" ");
+					return 0;
+				}
+				if (hashBuffer[rightIndexHash] != 0) {
+					stdout.writeln("Hash collission!!");
+					SYS_WRITE(1, ((\s_buffer) + i) - 16, 3);
+					stdout.write("R with ");
+					SYS_WRITE(1, (\s_buffer) + hashBuffer[rightIndexHash], 3);
+					stdout.writeln(" ");
+					return 0;
+				}
+				hashBuffer[leftIndexHash] = i - 9;
+				hashBuffer[rightIndexHash] = i - 4;
+				if destOffset == 0 {
+					if s_buffer[i - 9] == 'Z' {
+						destOffset = i - 9;
+					} else if s_buffer[i - 4] == 'Z' {
+						destOffset = i - 4;
+					}
+				}
+			}
+		} else {
+			if parseInstructions {
+				instructionSize += 1;
+			}
+		}
+	}
+
+	ui64 steps = 0;
+	ui8 instruction = s_buffer[steps % instructionSize];
+	ui32 currHash = Hash(\source, instruction == 'R');
+	steps += 1;
+
+	loop {
+		// if we found 'ZZZ' break
+		ui32 offset = hashBuffer[currHash];
+		if offset == destOffset {
+			break;
+		}
+		instruction = s_buffer[steps % (instructionSize)];
+		currHash = Hash((\s_buffer) + offset, instruction == 'R');
+		steps += 1;
+	}
+	stdout.write("Number of steps: ");
+	stdout.writeln(steps);
+	dealloc(hashBuffer, 4 * 2147483647);
+	return 0;
+}
+
+ui8 Part2(ui64 size) {
+
+	return 0;
+}
+
+ui8 main(cstring[] argv) {
+	i32 fd = SYS_OPEN(argv[1], 0, 0);
+	if (fd < 0) {
+		stdout.writeln("Could not open file");
+		return -1;
+	}
+	ui64 size = SYS_READ(fd, \s_buffer, 13627);
+	if (size == 0) {
+		stdout.writeln("Could not read from file");
+		return -1;
+	}
+	Part1(size);
+	//Part2(size);
+	return 0;
+}
