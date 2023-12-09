@@ -1,0 +1,141 @@
+ui8[21300] s_buffer;
+i64[21] s_line_buffer;
+ui8 s_line_buffer_count = 0;
+
+i64 RecurseHistory(ref<i64> arr, ui8 size) {
+	ui8 length = size;
+	bool allZeroes = true;
+	ref<i64> buffer = arr;
+	loop i, 0..length {
+		if buffer[i] != 0 {
+			allZeroes = false;
+		}
+	}
+	if allZeroes {
+		return 0;
+	} else {
+		ref<i64> next = alloc(8 * (length - 1));
+		loop i, 0..length - 1 {
+			next[i] = buffer[i + 1] - buffer[i];
+		}
+		return buffer[size - 1] + RecurseHistory(next, length - 1);
+	}
+	return 0;
+}
+
+i64 RecurseHistoryP2(ref<i64> arr, ui8 size) {
+	ui8 length = size;
+	bool allZeroes = true;
+	ref<i64> buffer = arr;
+	loop i, 0..length {
+		if buffer[i] != 0 {
+			allZeroes = false;
+		}
+	}
+	if allZeroes {
+		return 0;
+	} else {
+		ref<i64> next = alloc(8 * (length - 1));
+		loop i, 0..length - 1 {
+			next[i] = buffer[i + 1] - buffer[i];
+		}
+		return buffer[0] - RecurseHistoryP2(next, length - 1);
+	}
+	return 0;
+}
+
+ui8 Part1(ui64 size) {
+	ui64 length = size;
+	ui64 sum = 0;
+	loop i, 0..length {
+		ui8 byte = s_buffer[i];
+		if byte == '\n' {
+			sum += RecurseHistory(\s_line_buffer, s_line_buffer_count);
+			s_line_buffer_count = 0;
+		} else if ((byte >= '0') & (byte <= '9')) | (byte == '-') {
+			i64 num = 0;
+			if byte == '-' {
+				num = find_ui64_in_string(((\s_buffer) + i) + 1);
+				num = -num;
+				i += 1;
+			} else {
+				num = find_ui64_in_string((\s_buffer) + i);
+			}
+			ui8 numLength = 0;
+			loop j, 0..20 {
+				ui8 numByte = s_buffer[i + j];
+				if (numByte >= '0') & (numByte <= '9') {
+					numLength += 1;
+				} else {
+					break;
+				}
+			}
+			numLength -= 1;
+			i += numLength;
+			s_line_buffer[s_line_buffer_count] = num;
+			s_line_buffer_count += 1;
+		}
+	}
+	stdout.write("Sum of histories part 1: ");
+	stdout.writeln(sum);
+	return 0;
+}
+
+ui8 Part2(ui64 size) {
+	ui64 length = size;
+	i64 sum = 0;
+	loop i, 0..length {
+		ui8 byte = s_buffer[i];
+		if byte == '\n' {
+			sum += RecurseHistoryP2(\s_line_buffer, s_line_buffer_count);
+			s_line_buffer_count = 0;
+		} else if ((byte >= '0') & (byte <= '9')) | (byte == '-') {
+			i64 num = 0;
+			if byte == '-' {
+				num = find_ui64_in_string(((\s_buffer) + i) + 1);
+				num = -num;
+				i += 1;
+			} else {
+				num = find_ui64_in_string((\s_buffer) + i);
+			}
+			ui8 numLength = 0;
+			loop j, 0..20 {
+				ui8 numByte = s_buffer[i + j];
+				if (numByte >= '0') & (numByte <= '9') {
+					numLength += 1;
+				} else {
+					break;
+				}
+			}
+			numLength -= 1;
+			i += numLength;
+			s_line_buffer[s_line_buffer_count] = num;
+			s_line_buffer_count += 1;
+		}
+	}
+	stdout.write("Sum of histories part 2: ");
+	if (sum < 0) {
+		i64 converted = -sum;
+		stdout.write("-");
+		stdout.writeln(converted);
+	} else {
+		stdout.writeln(sum);
+	}
+	return 0;
+}
+
+ui8 main(cstring[] argv) {
+	i32 fd = SYS_OPEN(argv[1], 0, 0);
+	if (fd < 0) {
+		stdout.writeln("Could not open file");
+		return -1;
+	}
+	ui64 size = SYS_READ(fd, \s_buffer, 21290);
+	if (size == 0) {
+		stdout.writeln("Could not read from file");
+		return -1;
+	}
+	Part1(size);
+	Part2(size);
+	return 0;
+}
