@@ -1,5 +1,7 @@
 ui8[21300] s_buffer;
 ui16 s_direction = 0; // 0 up, 1 left, 2 right, 3 down
+ui64[21300] s_pipe_buffer;
+ui16 s_pipe_buffer_count = 0;
 
 ui64 GetNext(ui64 source, ui64 lineLength) {
 	if s_direction == 0 {
@@ -50,6 +52,15 @@ ui64 GetNext(ui64 source, ui64 lineLength) {
 	return 0;
 }
 
+bool IsPipe(ui64 offset) {
+	loop i, 0..s_pipe_buffer_count {
+		if s_pipe_buffer[i] == offset {
+			return true;
+		}
+	}
+	return false;
+}
+
 ui8 Part1(ui64 size) {
 	ui64 length = size;
 	ui64 sum = 0;
@@ -75,21 +86,54 @@ ui8 Part1(ui64 size) {
 		}
 	}
 	ui64[4] cardinalities = {start - lineLength, start - 1, start + 1, start + lineLength};
+	s_pipe_buffer[s_pipe_buffer_count] = start;
+	s_pipe_buffer_count += 1;
 	stdout.write("Line length: ");
 	stdout.writeln(lineLength);
 	next = GetNext(cardinalities[s_direction], lineLength);
+	ui8 prevDirection = 0;
 	loop {
 		if next != 0 {
+			s_pipe_buffer[s_pipe_buffer_count] = cardinalities[prevDirection];
+			s_pipe_buffer_count += 1;
 			break;
 		}
 		s_direction += 1;
+		prevDirection = s_direction;
 		next = GetNext(cardinalities[s_direction], lineLength);
 	}
 	ui64 totalLength = 1;
 	loop {
 		if s_buffer[next] == 'S' {
+			if prevDirection == s_direction {
+				if (prevDirection == 0) | (prevDirection == 3) {
+					s_buffer[next] = '|';
+				} else {
+					s_buffer[next] = '-';
+				}
+			} else {
+				if (prevDirection == 0) & (s_direction == 1) {
+					s_buffer[next] = 'L';
+				} else if (prevDirection == 0) & (s_direction == 2) {
+					s_buffer[next] = 'J';
+				} else if (prevDirection == 1) & (s_direction == 0) {
+					s_buffer[next] = '7';
+				} else if (prevDirection == 1) & (s_direction == 3) {
+					s_buffer[next] = 'J';
+				} else if (prevDirection == 2) & (s_direction == 0) {
+					s_buffer[next] = 'F';
+				} else if (prevDirection == 2) & (s_direction == 3) {
+					s_buffer[next] = 'L';
+				} else if (prevDirection == 3) & (s_direction == 1) {
+					s_buffer[next] = '7';
+				} else {
+					s_buffer[next] = 'F';
+				}
+			}
 			break;
 		}
+		s_pipe_buffer[s_pipe_buffer_count] = next;
+		s_pipe_buffer_count += 1;
 		next = GetNext(next, lineLength);
 		totalLength += 1;
 	}
@@ -102,8 +146,64 @@ ui8 Part1(ui64 size) {
 
 ui8 Part2(ui64 size) {
 	ui64 length = size;
-	i64 sum = 0;
+	ui64 sum = 0;
+	ui64 lineLength = 0;
 
+	loop i, 0..length {
+		ui8 byte = s_buffer[i];
+		if byte == '\n' {
+			if lineLength == 0 {
+				lineLength = i + 1;
+			}
+		}
+		if IsPipe(i) {
+			skip;
+		}
+		if lineLength != 0 {
+			ui64 verticalWalls = 0;
+			bool foundL = false;
+			bool foundF = false;
+			loop j, i..i + lineLength {
+				if s_buffer[j] == '\n' {
+					break;
+				}
+				bool isPipe = IsPipe(j);
+				if !isPipe {
+					foundL = false;
+					foundF = false;
+					skip;
+				}
+				if s_buffer[j] == '|' {
+					foundL = false;
+					foundF = false;
+					verticalWalls += 1;
+				} else if s_buffer[j] == 'L' {
+					foundF = false;
+					foundL = true;
+				} else if s_buffer[j] == 'F' {
+					foundL = false;
+					foundF = true;
+				} else if s_buffer[j] == '7' {
+					if foundL {
+						verticalWalls += 1;
+					}
+					foundL = false;
+					foundF = false;
+				} else if s_buffer[j] == 'J' {
+					if foundF {
+						verticalWalls += 1;
+					}
+					foundF = false;
+					foundL = false;
+				}
+			}
+			if (verticalWalls % 2) == 1 {
+				sum += 1;
+			}
+		}
+	}
+	stdout.write("Number of tiles enclosed by pipe: ");
+	stdout.writeln(sum);
 	return 0;
 }
 
@@ -119,6 +219,6 @@ ui8 main(cstring[] argv) {
 		return -1;
 	}
 	Part1(size);
-	//Part2(size);
+	Part2(size);
 	return 0;
 }
