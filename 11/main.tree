@@ -1,0 +1,130 @@
+ui8[19750] s_buffer;
+ui16[100] s_empty_lines;
+ui8 s_empty_lines_count = 0;
+ui64[500] s_x_coords;
+ui64[500] s_y_coords;
+ui16 s_galaxy_count = 0;
+
+void AddGalaxy(ui64 base, ui64 lineLen, ui64 change) {
+	ui64 toChange = change - 1;
+	ui64 toChangeX = 0;
+	ui64 toChangeY = 0;
+	ui64 x = base % lineLen;
+	ui64 y = base / lineLen;
+	loop i, 0..s_empty_lines_count {
+		ui16 emptyLine = s_empty_lines[(s_empty_lines_count - 1) - i];
+		if emptyLine > 1000 {
+			if x > (emptyLine - 1000) {
+				toChangeX += toChange;
+			}
+		} else {
+			if y > emptyLine {
+				toChangeY += toChange;
+			}
+		}
+	}
+	s_x_coords[s_galaxy_count] = (x + toChangeX);
+	s_y_coords[s_galaxy_count] = (y + toChangeY);
+	s_galaxy_count += 1;
+}
+
+ui64 Prepare(ui64 size) {
+	ui64 lineLength = 0;
+	ui64 length = size;
+	loop i, 0..length {
+		if s_buffer[i] == '\n' {
+			lineLength = i + 1;
+			break;
+		}
+	}
+	loop i, 0..lineLength - 1 {
+		bool empty = true;
+		loop j, 0..length / lineLength {
+			if s_buffer[i + (j * lineLength)] == '#' {
+				empty = false;
+				break;
+			}
+		}
+		if empty {
+			s_empty_lines[s_empty_lines_count] = i + 1000;
+			s_empty_lines_count += 1;
+		}
+	}
+	loop i, 0..length / lineLength {
+		bool empty = true;
+		loop j, 0..lineLength {
+			if s_buffer[j + (i * lineLength)] == '#' {
+				empty = false;
+				break;
+			}
+		}
+		if empty {
+			s_empty_lines[s_empty_lines_count] = i;
+			s_empty_lines_count += 1;
+		}
+	}
+	return lineLength;
+}
+
+ui8 Solve(ui64 size, ui64 lineLength, ui16 p) {
+	ui64 sum = 0;
+	ui16 part = p;
+	ui64 length = size;
+	ui64 lineLen = lineLength;
+
+	loop i, 0..length {
+		ui8 byte = s_buffer[i];
+		if byte == '#' {
+			if part == 1 {
+				AddGalaxy(i, lineLen, 2);
+			} else {
+				AddGalaxy(i, lineLen, 1000000);
+			}
+		}
+	}
+
+	loop i, 0..s_galaxy_count {
+		ui64 x = s_x_coords[i];
+		ui64 y = s_y_coords[i];
+		loop j, i..s_galaxy_count {
+			ui64 jx = s_x_coords[j];
+			ui64 jy = s_y_coords[j];
+			ui64 dx = 0;
+			ui64 dy = 0;
+			if jx > x {
+				dx = jx - x;
+			} else {
+				dx = x - jx;
+			}
+			if jy > y {
+				dy = jy - y;
+			} else {
+				dy = y - jy;
+			}
+			sum += (dx + dy);
+		}
+	}
+	stdout.write("Sum of lengths part ");
+	stdout.write(part);
+	stdout.write(": ");
+	stdout.writeln(sum);
+	return 0;
+}
+
+ui8 main(cstring[] argv) {
+	i32 fd = SYS_OPEN(argv[1], 0, 0);
+	if (fd < 0) {
+		stdout.writeln("Could not open file");
+		return -1;
+	}
+	ui64 size = SYS_READ(fd, \s_buffer, 19750);
+	if (size == 0) {
+		stdout.writeln("Could not read from file");
+		return -1;
+	}
+	ui64 lineLen = Prepare(size);
+	Solve(size, lineLen, 1);
+	s_galaxy_count = 0;
+	Solve(size, lineLen, 2);
+	return 0;
+}
